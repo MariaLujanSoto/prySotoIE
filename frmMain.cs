@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace prySotoIE
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void btnAbrirCarpetas_Click(object sender, EventArgs e)
+        {
+            frmNavegar frmNavegar = new frmNavegar();
+            frmNavegar.Show();
+            this.Hide();
         }
     }
 }
