@@ -24,7 +24,7 @@ namespace prySotoIE
             ventanaCarpetas.ShowDialog();
             // seleccion de carpeta
 
-            lblRuta.Text = ventanaCarpetas.SelectedPath;
+            lblRuta.Text += ventanaCarpetas.SelectedPath;
 
         }
 

@@ -36,9 +36,9 @@
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngresar.Location = new System.Drawing.Point(146, 449);
+            this.btnIngresar.Location = new System.Drawing.Point(134, 452);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(155, 30);
+            this.btnIngresar.Size = new System.Drawing.Size(167, 35);
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -51,7 +51,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(451, 509);
+            this.ClientSize = new System.Drawing.Size(451, 518);
             this.Controls.Add(this.btnIngresar);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

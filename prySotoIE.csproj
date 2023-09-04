@@ -102,5 +102,8 @@
   <ItemGroup>
     <None Include="Resources\insurance-company-your-logo-design-template-de2398bb234024633dcd5a368a37201a_screen.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Safety Broker Secure.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

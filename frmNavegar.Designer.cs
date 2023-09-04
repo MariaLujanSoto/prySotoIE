@@ -33,13 +33,13 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.ventanaCarpetas = new System.Windows.Forms.FolderBrowserDialog();
             this.uikl = new System.Windows.Forms.TreeView();
-            this.treeView2 = new System.Windows.Forms.TreeView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.txtNombreArchivo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAbrirCarpeta
             // 
+            this.btnAbrirCarpeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrirCarpeta.Location = new System.Drawing.Point(13, 27);
             this.btnAbrirCarpeta.Name = "btnAbrirCarpeta";
             this.btnAbrirCarpeta.Size = new System.Drawing.Size(173, 35);
@@ -50,6 +50,7 @@
             // 
             // btnGrabarArchivo
             // 
+            this.btnGrabarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabarArchivo.Location = new System.Drawing.Point(13, 265);
             this.btnGrabarArchivo.Name = "btnGrabarArchivo";
             this.btnGrabarArchivo.Size = new System.Drawing.Size(187, 37);
@@ -61,37 +62,30 @@
             // lblRuta
             // 
             this.lblRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRuta.Location = new System.Drawing.Point(34, 96);
+            this.lblRuta.Location = new System.Drawing.Point(12, 116);
             this.lblRuta.Name = "lblRuta";
             this.lblRuta.Size = new System.Drawing.Size(100, 23);
             this.lblRuta.TabIndex = 2;
-            this.lblRuta.Text = "EJEMPLO...";
+            this.lblRuta.Text = "Ruta...";
             // 
             // uikl
             // 
-            this.uikl.Location = new System.Drawing.Point(252, 27);
+            this.uikl.Location = new System.Drawing.Point(248, 27);
             this.uikl.Name = "uikl";
             this.uikl.Size = new System.Drawing.Size(161, 210);
             this.uikl.TabIndex = 3;
             // 
-            // treeView2
-            // 
-            this.treeView2.Location = new System.Drawing.Point(444, 27);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(161, 210);
-            this.treeView2.TabIndex = 4;
-            // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(252, 307);
+            this.richTextBox1.Location = new System.Drawing.Point(436, 27);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(353, 113);
+            this.richTextBox1.Size = new System.Drawing.Size(181, 369);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
             // txtNombreArchivo
             // 
-            this.txtNombreArchivo.Location = new System.Drawing.Point(27, 217);
+            this.txtNombreArchivo.Location = new System.Drawing.Point(13, 227);
             this.txtNombreArchivo.Name = "txtNombreArchivo";
             this.txtNombreArchivo.Size = new System.Drawing.Size(136, 20);
             this.txtNombreArchivo.TabIndex = 6;
@@ -104,12 +98,12 @@
             this.ClientSize = new System.Drawing.Size(640, 450);
             this.Controls.Add(this.txtNombreArchivo);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.treeView2);
             this.Controls.Add(this.uikl);
             this.Controls.Add(this.lblRuta);
             this.Controls.Add(this.btnGrabarArchivo);
             this.Controls.Add(this.btnAbrirCarpeta);
             this.Name = "frmNavegar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNavegar";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,7 +117,6 @@
         private System.Windows.Forms.Label lblRuta;
         private System.Windows.Forms.FolderBrowserDialog ventanaCarpetas;
         private System.Windows.Forms.TreeView uikl;
-        private System.Windows.Forms.TreeView treeView2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox txtNombreArchivo;
     }
