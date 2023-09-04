@@ -49,10 +49,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::prySotoIE.Properties.Resources.insurance_company_your_logo_design_template_de2398bb234024633dcd5a368a37201a_screen;
+            this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(453, 509);
+            this.ClientSize = new System.Drawing.Size(451, 509);
             this.Controls.Add(this.btnIngresar);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
