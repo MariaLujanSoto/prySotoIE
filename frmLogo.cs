@@ -19,10 +19,10 @@ namespace prySotoIE
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmMain frmMain = new frmMain();
-            frmMain.Show();
+            frmMain frmNavegar = new frmMain();
+            frmNavegar.Show();
             this.Hide();
-      
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
