@@ -20,25 +20,16 @@ namespace prySotoIE
             PopulateTreeView();
         }
 
-        private void btnAbrirCarpeta_Click(object sender, EventArgs e)
-        {
-            ventanaCarpetas.ShowDialog();
-            // seleccion de carpeta
-
-            lblRuta.Text += ventanaCarpetas.SelectedPath;
-
-        }
 
         private void btnGrabarArchivo_Click(object sender, EventArgs e)
         {
-            //ruta del archivo
-            string ruta = lblRuta.Text;
-            //nombre del archivo
-            ruta += "/" + txtNombreArchivo.Text;
+            StreamWriter objsw = new StreamWriter("Nuevoproveedor", true);
+            objsw.WriteLine(txtNombreProveedor.Text);
+            objsw.Close();
 
-            StreamWriter manejoArchivo = new StreamWriter(ruta);
-            MessageBox.Show("Archivo creeado " + txtNombreArchivo.Text);
-
+            MessageBox.Show("Cargado Correctamente");
+            txtNombreProveedor.Text = "";
+            txtNombreProveedor.Focus();
         }
 
         private void PopulateTreeView()
@@ -107,17 +98,54 @@ namespace prySotoIE
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
-      
 
 
+        string leerLinea;
+        string[] separarDatos;
         private void uikl_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            
         }
 
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            StreamReader sr = new StreamReader("baseproveedores.csv");
+
+            leerLinea = sr.ReadLine();
+            separarDatos = leerLinea.Split(';');
+
+            for (int indice = 0; indice < separarDatos.Length; indice++)
+            {
+                grilla.Columns.Add(separarDatos[indice], separarDatos[indice]);
+            }
+
+            while (sr.EndOfStream == false)
+            {
+                leerLinea = sr.ReadLine();
+                separarDatos = leerLinea.Split(';');
+                grilla.Rows.Add(separarDatos);
+            }
+
+            sr.Close();
+
+            if ()
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
