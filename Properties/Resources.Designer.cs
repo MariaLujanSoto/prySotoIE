@@ -63,6 +63,16 @@ namespace prySotoIE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image {
+            get {
+                object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap insurance_company_your_logo_design_template_de2398bb234024633dcd5a368a37201a_screen {
             get {
                 object obj = ResourceManager.GetObject("insurance-company-your-logo-design-template-de2398bb234024633dcd5a368a37201a_scre" +
@@ -77,6 +87,46 @@ namespace prySotoIE.Properties {
         internal static System.Drawing.Bitmap Safety_Broker_Secure {
             get {
                 object obj = ResourceManager.GetObject("Safety Broker Secure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safety_Broker_Secure1 {
+            get {
+                object obj = ResourceManager.GetObject("Safety Broker Secure1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safety_Broker_Secure2 {
+            get {
+                object obj = ResourceManager.GetObject("Safety Broker Secure2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safety_Broker_Secure3 {
+            get {
+                object obj = ResourceManager.GetObject("Safety Broker Secure3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safety_Broker_Secure4 {
+            get {
+                object obj = ResourceManager.GetObject("Safety Broker Secure4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

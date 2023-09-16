@@ -10,24 +10,23 @@ using System.Windows.Forms;
 
 namespace prySotoIE
 {
-    public partial class Form1 : Form
+    public partial class frmUsuario : Form
     {
-        public Form1()
+        public frmUsuario()
         {
             InitializeComponent();
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
+        private void frmUsuario_Load(object sender, EventArgs e)
         {
-            frmUsuario frmUsuario = new frmUsuario();
-            frmUsuario.Show();
-            this.Hide();
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
-
+            frmMain frmMain = new frmMain();
+            frmMain.Show();
+            this.Hide();
         }
     }
 }

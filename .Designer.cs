@@ -49,7 +49,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure;
+            this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(451, 518);
             this.Controls.Add(this.btnIngresar);

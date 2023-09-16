@@ -23,13 +23,13 @@ namespace prySotoIE
 
         private void btnGrabarArchivo_Click(object sender, EventArgs e)
         {
-            StreamWriter objsw = new StreamWriter("Nuevoproveedor", true);
-            objsw.WriteLine(txtNombreProveedor.Text);
-            objsw.Close();
+            //StreamWriter objsw = new StreamWriter("Nuevoproveedor", true);
+            //objsw.WriteLine(txtNombreProveedor.Text);
+            //objsw.Close();
 
-            MessageBox.Show("Cargado Correctamente");
-            txtNombreProveedor.Text = "";
-            txtNombreProveedor.Focus();
+            //MessageBox.Show("Cargado Correctamente");
+            //txtNombreProveedor.Text = "";
+            //txtNombreProveedor.Focus();
         }
 
         private void PopulateTreeView()
@@ -102,18 +102,20 @@ namespace prySotoIE
 
         string leerLinea;
         string[] separarDatos;
+        bool datosCargados;
         private void uikl_AfterSelect(object sender, TreeViewEventArgs e)
         {
             
         }
 
-        private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void CargarDatosDesdeCSV()
         {
             this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             StreamReader sr = new StreamReader("baseproveedores.csv");
 
             leerLinea = sr.ReadLine();
             separarDatos = leerLinea.Split(';');
+            datosCargados = false;
 
             for (int indice = 0; indice < separarDatos.Length; indice++)
             {
@@ -125,11 +127,27 @@ namespace prySotoIE
                 leerLinea = sr.ReadLine();
                 separarDatos = leerLinea.Split(';');
                 grilla.Rows.Add(separarDatos);
+          
             }
 
-            sr.Close();
 
-            if ()
+
+            sr.Close();
+        }
+        private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+            if (!datosCargados)
+            {
+                CargarDatosDesdeCSV();
+                datosCargados = true;
+            }
+            else
+            {
+                MessageBox.Show("Los datos ya fueron cargados previamente.");
+            }
+
+
 
         }
 
@@ -146,6 +164,32 @@ namespace prySotoIE
         private void btnProveedores_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cargarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCargarProveedor frmCargarProveedor = new frmCargarProveedor();
+            frmCargarProveedor.Show();
+            this.Hide();
+        }
+
+        private void btInicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeView1.Visible = true;
+            listView1.Visible = true;
+            grilla.Visible = true;
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeView1.Visible = false;
+            listView1.Visible = false;
+            grilla.Visible = false;
         }
     }
 }
