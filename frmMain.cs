@@ -35,8 +35,9 @@ namespace prySotoIE
         private void PopulateTreeView()
         {
             TreeNode rootNode;
+            // ver como sacar el path de donde esta la carpeta y colocarla aca
 
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\lujis\source\repos\prySotoIE\bin\Debug\Proveedores");
+            DirectoryInfo info = new DirectoryInfo("../../Resources/Proveedores");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -64,8 +65,11 @@ namespace prySotoIE
                 nodeToAddTo.Nodes.Add(aNode);
             }
         }
+          private void treeView1_MouseClick(object sender, MouseEventArgs e)
+        {
 
-        void treeView1_NodeMouseClick(object sender,
+        }
+        void treeView1_NodeMouseDoubleClick(object sender,
     TreeNodeMouseClickEventArgs e)
         {
             TreeNode newSelected = e.Node;
@@ -97,6 +101,7 @@ namespace prySotoIE
             }
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
 
@@ -139,7 +144,7 @@ namespace prySotoIE
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
 
             //if (!datosCargados)
             //{
@@ -201,7 +206,9 @@ namespace prySotoIE
             Application.Exit();
         }
 
-        private void treeView1_MouseClick(object sender, MouseEventArgs e)
+      
+
+        private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

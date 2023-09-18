@@ -46,6 +46,9 @@
             this.txtLiquidadorResp = new System.Windows.Forms.TextBox();
             this.btnCargarProveedor = new System.Windows.Forms.Button();
             this.btnVolverAtras = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -188,9 +191,9 @@
             // btnCargarProveedor
             // 
             this.btnCargarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarProveedor.Location = new System.Drawing.Point(150, 379);
+            this.btnCargarProveedor.Location = new System.Drawing.Point(49, 363);
             this.btnCargarProveedor.Name = "btnCargarProveedor";
-            this.btnCargarProveedor.Size = new System.Drawing.Size(199, 33);
+            this.btnCargarProveedor.Size = new System.Drawing.Size(99, 33);
             this.btnCargarProveedor.TabIndex = 27;
             this.btnCargarProveedor.Text = "CARGAR";
             this.btnCargarProveedor.UseVisualStyleBackColor = true;
@@ -206,13 +209,46 @@
             this.btnVolverAtras.UseVisualStyleBackColor = true;
             this.btnVolverAtras.Click += new System.EventHandler(this.btnVolverAtras_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(169, 363);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(99, 33);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(284, 363);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(99, 33);
+            this.btnModificar.TabIndex = 30;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(400, 363);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(99, 33);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // frmCargarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(504, 466);
+            this.ClientSize = new System.Drawing.Size(524, 466);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnVolverAtras);
             this.Controls.Add(this.btnCargarProveedor);
             this.Controls.Add(this.label8);
@@ -261,5 +297,8 @@
         private System.Windows.Forms.TextBox txtLiquidadorResp;
         private System.Windows.Forms.Button btnCargarProveedor;
         private System.Windows.Forms.Button btnVolverAtras;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ventanaCarpetas = new System.Windows.Forms.FolderBrowserDialog();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -42,6 +43,8 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImgCarpetas = new System.Windows.Forms.ImageList(this.components);
+            this.imgArchivos = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,8 +57,11 @@
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.ImgCarpetas;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(161, 264);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.uikl_AfterSelect);
@@ -88,9 +94,11 @@
             this.columnHeader3});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.imgArchivos;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(303, 264);
+            this.listView1.SmallImageList = this.imgArchivos;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -123,11 +131,12 @@
             // grilla
             // 
             this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilla.Location = new System.Drawing.Point(84, 311);
+            this.grilla.Location = new System.Drawing.Point(70, 311);
             this.grilla.Name = "grilla";
             this.grilla.Size = new System.Drawing.Size(594, 184);
             this.grilla.TabIndex = 8;
             this.grilla.Visible = false;
+            this.grilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -162,6 +171,18 @@
             this.cargarProveedorToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.cargarProveedorToolStripMenuItem.Text = "Cargar Proveedor";
             this.cargarProveedorToolStripMenuItem.Click += new System.EventHandler(this.cargarProveedorToolStripMenuItem_Click);
+            // 
+            // ImgCarpetas
+            // 
+            this.ImgCarpetas.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImgCarpetas.ImageStream")));
+            this.ImgCarpetas.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImgCarpetas.Images.SetKeyName(0, "45480a3100a9edc6bf3b0ce03b3830e4-carpeta-azul-redondeada.png");
+            // 
+            // imgArchivos
+            // 
+            this.imgArchivos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgArchivos.ImageStream")));
+            this.imgArchivos.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgArchivos.Images.SetKeyName(0, "icone-fichier-document-noir.png");
             // 
             // frmMain
             // 
@@ -208,5 +229,7 @@
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarProveedorToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ImageList ImgCarpetas;
+        private System.Windows.Forms.ImageList imgArchivos;
     }
 }
