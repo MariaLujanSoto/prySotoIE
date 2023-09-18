@@ -73,6 +73,16 @@ namespace prySotoIE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image1 {
+            get {
+                object obj = ResourceManager.GetObject("image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap insurance_company_your_logo_design_template_de2398bb234024633dcd5a368a37201a_screen {
             get {
                 object obj = ResourceManager.GetObject("insurance-company-your-logo-design-template-de2398bb234024633dcd5a368a37201a_scre" +

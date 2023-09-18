@@ -28,5 +28,16 @@ namespace prySotoIE
             frmMain.Show();
             this.Hide();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

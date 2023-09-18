@@ -36,7 +36,7 @@ namespace prySotoIE
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"../..");
+            DirectoryInfo info = new DirectoryInfo(@"C:\Users\lujis\source\repos\prySotoIE\bin\Debug\Proveedores");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -106,46 +106,50 @@ namespace prySotoIE
         private void uikl_AfterSelect(object sender, TreeViewEventArgs e)
         {
             
+
         }
 
         private void CargarDatosDesdeCSV()
+
         {
-            this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
-            StreamReader sr = new StreamReader("baseproveedores.csv");
+            
+            //StreamReader sr = new StreamReader("baseproveedores.csv");
 
-            leerLinea = sr.ReadLine();
-            separarDatos = leerLinea.Split(';');
-            datosCargados = false;
+            //leerLinea = sr.ReadLine();
+            //separarDatos = leerLinea.Split(';');
+            //datosCargados = false;
 
-            for (int indice = 0; indice < separarDatos.Length; indice++)
-            {
-                grilla.Columns.Add(separarDatos[indice], separarDatos[indice]);
-            }
+            //for (int indice = 0; indice < separarDatos.Length; indice++)
+            //{
+            //    grilla.Columns.Add(separarDatos[indice], separarDatos[indice]);
+            //}
 
-            while (sr.EndOfStream == false)
-            {
-                leerLinea = sr.ReadLine();
-                separarDatos = leerLinea.Split(';');
-                grilla.Rows.Add(separarDatos);
-          
-            }
+            //while (sr.EndOfStream == false)
+            //{
+            //    leerLinea = sr.ReadLine();
+            //    separarDatos = leerLinea.Split(';');
+            //    grilla.Rows.Add(separarDatos);
+
+            //}
 
 
 
-            sr.Close();
+            //sr.Close();
         }
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
-            if (!datosCargados)
-            {
-                CargarDatosDesdeCSV();
-                datosCargados = true;
-            }
-            else
-            {
-                MessageBox.Show("Los datos ya fueron cargados previamente.");
-            }
+
+            this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+
+            //if (!datosCargados)
+            //{
+            //    CargarDatosDesdeCSV();
+            //    datosCargados = true;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Los datos ya fueron cargados previamente.");
+            //}
 
 
 
@@ -180,16 +184,26 @@ namespace prySotoIE
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            treeView1.Visible = true;
-            listView1.Visible = true;
             grilla.Visible = true;
+            splitContainer1.Visible = true;
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            treeView1.Visible = false;
-            listView1.Visible = false;
+            
             grilla.Visible = false;
+            splitContainer1.Visible = false;
+
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void treeView1_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
