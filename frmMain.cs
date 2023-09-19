@@ -161,16 +161,15 @@ namespace prySotoIE
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grilla.Visible = true;
             splitContainer1.Visible = true;
+            btnEliminar.Visible = true;
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            grilla.Visible = false;
             splitContainer1.Visible = false;
-
+            btnEliminar.Visible = false;
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -216,6 +215,13 @@ namespace prySotoIE
             }
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+        }
+        string Entidad;
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
 
         }
     }

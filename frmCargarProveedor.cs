@@ -23,10 +23,14 @@ namespace prySotoIE
         {
 
         }
-
+        string Entidad;
         private void btnCargarProveedor_Click(object sender, EventArgs e)
         {
-            StreamWriter objsw = new StreamWriter("Nuevoproveedor", true);
+            DirectoryInfo info = new DirectoryInfo("../../Resources/Proveedores");
+            string ruta = info.FullName;
+            Entidad = txtEntidad.Text;
+
+            StreamWriter objsw = new StreamWriter(ruta + "/" + Entidad , true);
             objsw.WriteLine(txtNumeroProveedor.Text);
             objsw.WriteLine(txtEntidad.Text);
             objsw.WriteLine(txtApertura.Text);
@@ -63,6 +67,11 @@ namespace prySotoIE
             frmMain frmMain = new frmMain();
             frmMain.Show();
             this.Hide();
+        }
+
+        public void txtEntidad_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -49,6 +49,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.grilla = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 77);
+            this.label1.Location = new System.Drawing.Point(259, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 15;
@@ -65,7 +67,7 @@
             // 
             // txtNumeroProveedor
             // 
-            this.txtNumeroProveedor.Location = new System.Drawing.Point(247, 76);
+            this.txtNumeroProveedor.Location = new System.Drawing.Point(359, 77);
             this.txtNumeroProveedor.Name = "txtNumeroProveedor";
             this.txtNumeroProveedor.Size = new System.Drawing.Size(136, 20);
             this.txtNumeroProveedor.TabIndex = 14;
@@ -74,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 30);
+            this.label2.Location = new System.Drawing.Point(224, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(271, 20);
             this.label2.TabIndex = 16;
@@ -85,7 +87,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(142, 188);
+            this.label3.Location = new System.Drawing.Point(254, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 15);
             this.label3.TabIndex = 18;
@@ -93,24 +95,25 @@
             // 
             // txtNExp
             // 
-            this.txtNExp.Location = new System.Drawing.Point(247, 187);
+            this.txtNExp.Location = new System.Drawing.Point(359, 188);
             this.txtNExp.Name = "txtNExp";
             this.txtNExp.Size = new System.Drawing.Size(136, 20);
             this.txtNExp.TabIndex = 17;
             // 
             // txtEntidad
             // 
-            this.txtEntidad.Location = new System.Drawing.Point(247, 113);
+            this.txtEntidad.Location = new System.Drawing.Point(359, 114);
             this.txtEntidad.Name = "txtEntidad";
             this.txtEntidad.Size = new System.Drawing.Size(136, 20);
             this.txtEntidad.TabIndex = 17;
+            this.txtEntidad.TextChanged += new System.EventHandler(this.txtEntidad_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(147, 114);
+            this.label4.Location = new System.Drawing.Point(259, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 15);
             this.label4.TabIndex = 18;
@@ -121,7 +124,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(142, 151);
+            this.label5.Location = new System.Drawing.Point(254, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 15);
             this.label5.TabIndex = 20;
@@ -129,7 +132,7 @@
             // 
             // txtApertura
             // 
-            this.txtApertura.Location = new System.Drawing.Point(247, 150);
+            this.txtApertura.Location = new System.Drawing.Point(359, 151);
             this.txtApertura.Name = "txtApertura";
             this.txtApertura.Size = new System.Drawing.Size(136, 20);
             this.txtApertura.TabIndex = 19;
@@ -139,7 +142,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(121, 226);
+            this.label6.Location = new System.Drawing.Point(233, 227);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 15);
             this.label6.TabIndex = 24;
@@ -147,7 +150,7 @@
             // 
             // txtJurisdiccion
             // 
-            this.txtJurisdiccion.Location = new System.Drawing.Point(247, 225);
+            this.txtJurisdiccion.Location = new System.Drawing.Point(359, 226);
             this.txtJurisdiccion.Name = "txtJurisdiccion";
             this.txtJurisdiccion.Size = new System.Drawing.Size(136, 20);
             this.txtJurisdiccion.TabIndex = 23;
@@ -157,7 +160,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(133, 265);
+            this.label7.Location = new System.Drawing.Point(245, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 15);
             this.label7.TabIndex = 22;
@@ -165,7 +168,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(247, 264);
+            this.txtDireccion.Location = new System.Drawing.Point(359, 265);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(136, 20);
             this.txtDireccion.TabIndex = 21;
@@ -175,7 +178,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(37, 308);
+            this.label8.Location = new System.Drawing.Point(149, 309);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(195, 15);
             this.label8.TabIndex = 26;
@@ -183,7 +186,7 @@
             // 
             // txtLiquidadorResp
             // 
-            this.txtLiquidadorResp.Location = new System.Drawing.Point(247, 307);
+            this.txtLiquidadorResp.Location = new System.Drawing.Point(359, 308);
             this.txtLiquidadorResp.Name = "txtLiquidadorResp";
             this.txtLiquidadorResp.Size = new System.Drawing.Size(136, 20);
             this.txtLiquidadorResp.TabIndex = 25;
@@ -191,7 +194,7 @@
             // btnCargarProveedor
             // 
             this.btnCargarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarProveedor.Location = new System.Drawing.Point(49, 363);
+            this.btnCargarProveedor.Location = new System.Drawing.Point(161, 574);
             this.btnCargarProveedor.Name = "btnCargarProveedor";
             this.btnCargarProveedor.Size = new System.Drawing.Size(99, 33);
             this.btnCargarProveedor.TabIndex = 27;
@@ -201,7 +204,7 @@
             // 
             // btnVolverAtras
             // 
-            this.btnVolverAtras.Location = new System.Drawing.Point(21, 416);
+            this.btnVolverAtras.Location = new System.Drawing.Point(12, 569);
             this.btnVolverAtras.Name = "btnVolverAtras";
             this.btnVolverAtras.Size = new System.Drawing.Size(53, 38);
             this.btnVolverAtras.TabIndex = 28;
@@ -212,7 +215,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(169, 363);
+            this.btnEliminar.Location = new System.Drawing.Point(279, 574);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(99, 33);
             this.btnEliminar.TabIndex = 29;
@@ -222,7 +225,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(284, 363);
+            this.btnModificar.Location = new System.Drawing.Point(396, 574);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(99, 33);
             this.btnModificar.TabIndex = 30;
@@ -232,12 +235,21 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(400, 363);
+            this.btnCancelar.Location = new System.Drawing.Point(512, 574);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 33);
             this.btnCancelar.TabIndex = 31;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // grilla
+            // 
+            this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grilla.Location = new System.Drawing.Point(80, 361);
+            this.grilla.Name = "grilla";
+            this.grilla.Size = new System.Drawing.Size(594, 184);
+            this.grilla.TabIndex = 32;
+            this.grilla.Visible = false;
             // 
             // frmCargarProveedor
             // 
@@ -245,7 +257,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(524, 466);
+            this.ClientSize = new System.Drawing.Size(714, 634);
+            this.Controls.Add(this.grilla);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
@@ -273,6 +286,7 @@
             this.Text = "Safety Net | Cargar Proveedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCargarProveedor_FormClosed);
             this.Load += new System.EventHandler(this.frmCargarProveedor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +299,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNExp;
-        private System.Windows.Forms.TextBox txtEntidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtApertura;
@@ -300,5 +313,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView grilla;
+        public System.Windows.Forms.TextBox txtEntidad;
     }
 }
