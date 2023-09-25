@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargarProveedor));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNumero = new System.Windows.Forms.Label();
             this.txtNumeroProveedor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblNExp = new System.Windows.Forms.Label();
             this.txtNExp = new System.Windows.Forms.TextBox();
             this.txtEntidad = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblEntidad = new System.Windows.Forms.Label();
+            this.lblApertura = new System.Windows.Forms.Label();
             this.txtApertura = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblJurisd = new System.Windows.Forms.Label();
             this.txtJurisdiccion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtLiquidadorResp = new System.Windows.Forms.TextBox();
@@ -49,21 +49,19 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.grilla = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNumero
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "NÚMERO";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.Location = new System.Drawing.Point(259, 78);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(68, 15);
+            this.lblNumero.TabIndex = 15;
+            this.lblNumero.Text = "NÚMERO";
+            this.lblNumero.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNumeroProveedor
             // 
@@ -82,16 +80,16 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Registro de Nuevos Proveedores";
             // 
-            // label3
+            // lblNExp
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(254, 189);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 15);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Nº EXPTE";
+            this.lblNExp.AutoSize = true;
+            this.lblNExp.BackColor = System.Drawing.Color.Transparent;
+            this.lblNExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNExp.Location = new System.Drawing.Point(254, 189);
+            this.lblNExp.Name = "lblNExp";
+            this.lblNExp.Size = new System.Drawing.Size(70, 15);
+            this.lblNExp.TabIndex = 18;
+            this.lblNExp.Text = "Nº EXPTE";
             // 
             // txtNExp
             // 
@@ -108,27 +106,27 @@
             this.txtEntidad.TabIndex = 17;
             this.txtEntidad.TextChanged += new System.EventHandler(this.txtEntidad_TextChanged);
             // 
-            // label4
+            // lblEntidad
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(259, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "ENTIDAD";
+            this.lblEntidad.AutoSize = true;
+            this.lblEntidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntidad.Location = new System.Drawing.Point(259, 115);
+            this.lblEntidad.Name = "lblEntidad";
+            this.lblEntidad.Size = new System.Drawing.Size(66, 15);
+            this.lblEntidad.TabIndex = 18;
+            this.lblEntidad.Text = "ENTIDAD";
             // 
-            // label5
+            // lblApertura
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(254, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 15);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "APERTURA";
+            this.lblApertura.AutoSize = true;
+            this.lblApertura.BackColor = System.Drawing.Color.Transparent;
+            this.lblApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApertura.Location = new System.Drawing.Point(254, 152);
+            this.lblApertura.Name = "lblApertura";
+            this.lblApertura.Size = new System.Drawing.Size(79, 15);
+            this.lblApertura.TabIndex = 20;
+            this.lblApertura.Text = "APERTURA";
             // 
             // txtApertura
             // 
@@ -137,16 +135,16 @@
             this.txtApertura.Size = new System.Drawing.Size(136, 20);
             this.txtApertura.TabIndex = 19;
             // 
-            // label6
+            // lblJurisd
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(233, 227);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 15);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "JUZG. JURISD";
+            this.lblJurisd.AutoSize = true;
+            this.lblJurisd.BackColor = System.Drawing.Color.Transparent;
+            this.lblJurisd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJurisd.Location = new System.Drawing.Point(233, 227);
+            this.lblJurisd.Name = "lblJurisd";
+            this.lblJurisd.Size = new System.Drawing.Size(100, 15);
+            this.lblJurisd.TabIndex = 24;
+            this.lblJurisd.Text = "JUZG. JURISD";
             // 
             // txtJurisdiccion
             // 
@@ -155,16 +153,16 @@
             this.txtJurisdiccion.Size = new System.Drawing.Size(136, 20);
             this.txtJurisdiccion.TabIndex = 23;
             // 
-            // label7
+            // lblDireccion
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(245, 266);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 15);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "DIRECCION";
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.BackColor = System.Drawing.Color.Transparent;
+            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(245, 266);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(82, 15);
+            this.lblDireccion.TabIndex = 22;
+            this.lblDireccion.Text = "DIRECCION";
             // 
             // txtDireccion
             // 
@@ -242,15 +240,6 @@
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // grilla
-            // 
-            this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilla.Location = new System.Drawing.Point(80, 361);
-            this.grilla.Name = "grilla";
-            this.grilla.Size = new System.Drawing.Size(594, 184);
-            this.grilla.TabIndex = 32;
-            this.grilla.Visible = false;
-            // 
             // frmCargarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,7 +247,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(714, 634);
-            this.Controls.Add(this.grilla);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
@@ -266,18 +254,18 @@
             this.Controls.Add(this.btnCargarProveedor);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtLiquidadorResp);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblJurisd);
             this.Controls.Add(this.txtJurisdiccion);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblApertura);
             this.Controls.Add(this.txtApertura);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblEntidad);
+            this.Controls.Add(this.lblNExp);
             this.Controls.Add(this.txtEntidad);
             this.Controls.Add(this.txtNExp);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.txtNumeroProveedor);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -286,7 +274,6 @@
             this.Text = "Safety Net | Cargar Proveedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCargarProveedor_FormClosed);
             this.Load += new System.EventHandler(this.frmCargarProveedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,17 +281,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.TextBox txtNumeroProveedor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNExp;
         private System.Windows.Forms.TextBox txtNExp;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblEntidad;
+        private System.Windows.Forms.Label lblApertura;
         private System.Windows.Forms.TextBox txtApertura;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblJurisd;
         private System.Windows.Forms.TextBox txtJurisdiccion;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtLiquidadorResp;
@@ -313,7 +300,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView grilla;
         public System.Windows.Forms.TextBox txtEntidad;
     }
 }

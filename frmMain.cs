@@ -179,11 +179,6 @@ namespace prySotoIE
 
       
 
-        private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void treeView1_NodeMouseDoubleClick_1(object sender, TreeNodeMouseClickEventArgs e)
         {
             TreeNode newSelected = e.Node;

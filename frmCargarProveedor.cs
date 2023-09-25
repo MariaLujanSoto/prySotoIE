@@ -73,5 +73,10 @@ namespace prySotoIE
         {
 
         }
+
+        private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
