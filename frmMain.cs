@@ -163,6 +163,8 @@ namespace prySotoIE
         {
             splitContainer1.Visible = true;
             btnEliminar.Visible = true;
+            btnCargar.Visible = true;
+            grilla.Visible = true;
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,6 +172,9 @@ namespace prySotoIE
             
             splitContainer1.Visible = false;
             btnEliminar.Visible = false;
+            btnCargar.Visible = false;
+            grilla.Visible = false;
+
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

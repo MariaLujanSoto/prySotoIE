@@ -47,7 +47,7 @@
             this.listaProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grilla = new System.Windows.Forms.DataGridView();
-            this.btnCargarProveedor = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,7 +80,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(123, 72);
+            this.splitContainer1.Location = new System.Drawing.Point(132, 72);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -91,8 +91,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listView1);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(483, 245);
-            this.splitContainer1.SplitterDistance = 160;
+            this.splitContainer1.Size = new System.Drawing.Size(518, 245);
+            this.splitContainer1.SplitterDistance = 171;
             this.splitContainer1.TabIndex = 7;
             this.splitContainer1.Visible = false;
             // 
@@ -107,7 +107,7 @@
             this.listView1.LargeImageList = this.imgArchivos;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(319, 245);
+            this.listView1.Size = new System.Drawing.Size(343, 245);
             this.listView1.SmallImageList = this.imgArchivos;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -175,20 +175,20 @@
             // cargarProveedorToolStripMenuItem
             // 
             this.cargarProveedorToolStripMenuItem.Name = "cargarProveedorToolStripMenuItem";
-            this.cargarProveedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargarProveedorToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.cargarProveedorToolStripMenuItem.Text = "Cargar Proveedor";
             this.cargarProveedorToolStripMenuItem.Click += new System.EventHandler(this.cargarProveedorToolStripMenuItem_Click);
             // 
             // listaProveedoresToolStripMenuItem
             // 
             this.listaProveedoresToolStripMenuItem.Name = "listaProveedoresToolStripMenuItem";
-            this.listaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.listaProveedoresToolStripMenuItem.Text = "Lista Proveedores";
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(535, 493);
+            this.btnEliminar.Location = new System.Drawing.Point(379, 493);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 33);
             this.btnEliminar.TabIndex = 30;
@@ -200,21 +200,22 @@
             // grilla
             // 
             this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilla.Location = new System.Drawing.Point(123, 323);
+            this.grilla.Location = new System.Drawing.Point(98, 323);
             this.grilla.Name = "grilla";
-            this.grilla.Size = new System.Drawing.Size(483, 145);
+            this.grilla.Size = new System.Drawing.Size(582, 145);
             this.grilla.TabIndex = 33;
             this.grilla.Visible = false;
             // 
-            // btnCargarProveedor
+            // btnCargar
             // 
-            this.btnCargarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarProveedor.Location = new System.Drawing.Point(430, 493);
-            this.btnCargarProveedor.Name = "btnCargarProveedor";
-            this.btnCargarProveedor.Size = new System.Drawing.Size(99, 33);
-            this.btnCargarProveedor.TabIndex = 34;
-            this.btnCargarProveedor.Text = "CARGAR";
-            this.btnCargarProveedor.UseVisualStyleBackColor = true;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(267, 493);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(99, 33);
+            this.btnCargar.TabIndex = 34;
+            this.btnCargar.Text = "CARGAR";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Visible = false;
             // 
             // frmMain
             // 
@@ -224,8 +225,8 @@
             this.BackgroundImage = global::prySotoIE.Properties.Resources.image1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(789, 586);
-            this.Controls.Add(this.btnCargarProveedor);
             this.Controls.Add(this.grilla);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
@@ -267,6 +268,6 @@
         private System.Windows.Forms.ToolStripMenuItem listaProveedoresToolStripMenuItem;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView grilla;
-        private System.Windows.Forms.Button btnCargarProveedor;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
