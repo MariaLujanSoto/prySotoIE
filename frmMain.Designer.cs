@@ -43,11 +43,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grilla = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -113,6 +112,7 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -164,31 +164,15 @@
             // 
             // proveedoresToolStripMenuItem
             // 
-            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cargarProveedorToolStripMenuItem,
-            this.listaProveedoresToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
-            // cargarProveedorToolStripMenuItem
-            // 
-            this.cargarProveedorToolStripMenuItem.Name = "cargarProveedorToolStripMenuItem";
-            this.cargarProveedorToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.cargarProveedorToolStripMenuItem.Text = "Cargar Proveedor";
-            this.cargarProveedorToolStripMenuItem.Click += new System.EventHandler(this.cargarProveedorToolStripMenuItem_Click);
-            // 
-            // listaProveedoresToolStripMenuItem
-            // 
-            this.listaProveedoresToolStripMenuItem.Name = "listaProveedoresToolStripMenuItem";
-            this.listaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.listaProveedoresToolStripMenuItem.Text = "Lista Proveedores";
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(379, 493);
+            this.btnEliminar.Location = new System.Drawing.Point(468, 519);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 33);
             this.btnEliminar.TabIndex = 30;
@@ -200,22 +184,35 @@
             // grilla
             // 
             this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilla.Location = new System.Drawing.Point(98, 323);
+            this.grilla.Location = new System.Drawing.Point(91, 323);
             this.grilla.Name = "grilla";
-            this.grilla.Size = new System.Drawing.Size(582, 145);
+            this.grilla.Size = new System.Drawing.Size(604, 178);
             this.grilla.TabIndex = 33;
             this.grilla.Visible = false;
+            this.grilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_CellContentClick);
             // 
             // btnCargar
             // 
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(267, 493);
+            this.btnCargar.Location = new System.Drawing.Point(218, 519);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(99, 33);
             this.btnCargar.TabIndex = 34;
             this.btnCargar.Text = "CARGAR";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Visible = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(346, 519);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(91, 33);
+            this.btnEditar.TabIndex = 35;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
             // 
             // frmMain
             // 
@@ -225,6 +222,7 @@
             this.BackgroundImage = global::prySotoIE.Properties.Resources.image1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(789, 586);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.grilla);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnEliminar);
@@ -261,13 +259,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargarProveedorToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList ImgCarpetas;
         private System.Windows.Forms.ImageList imgArchivos;
-        private System.Windows.Forms.ToolStripMenuItem listaProveedoresToolStripMenuItem;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView grilla;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

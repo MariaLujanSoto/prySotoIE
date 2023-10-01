@@ -26,28 +26,30 @@ namespace prySotoIE
         string Entidad;
         private void btnCargarProveedor_Click(object sender, EventArgs e)
         {
-            DirectoryInfo info = new DirectoryInfo("../../Resources/Proveedores");
-            string ruta = info.FullName;
-            Entidad = txtEntidad.Text;
 
-            StreamWriter objsw = new StreamWriter(ruta + "/" + Entidad , true);
-            objsw.WriteLine(txtNumeroProveedor.Text);
-            objsw.WriteLine(txtEntidad.Text);
-            objsw.WriteLine(txtApertura.Text);
-            objsw.WriteLine(txtNExp.Text);
-            objsw.WriteLine(txtJurisdiccion.Text);
-            objsw.WriteLine(txtDireccion.Text);
-            objsw.WriteLine(txtLiquidadorResp.Text);
-            objsw.Close();
 
-            MessageBox.Show("Cargado Correctamente");
-            txtNumeroProveedor.Text = "";
-            txtEntidad.Text = "";
-            txtApertura.Text = "";
-            txtNExp.Text = "";
-            txtJurisdiccion.Text = "";
-            txtDireccion.Text = "";
-            txtLiquidadorResp.Text = "";
+            //DirectoryInfo info = new DirectoryInfo("../../Resources/Proveedores");
+            //string ruta = info.FullName;
+            //Entidad = txtEntidad.Text;
+
+            //StreamWriter objsw = new StreamWriter(ruta + "/" + Entidad , true);
+            //objsw.WriteLine(txtNumeroProveedor.Text);
+            //objsw.WriteLine(txtEntidad.Text);
+            //objsw.WriteLine(txtApertura.Text);
+            //objsw.WriteLine(txtNExp.Text);
+            //objsw.WriteLine(txtJurisdiccion.Text);
+            //objsw.WriteLine(txtDireccion.Text);
+            //objsw.WriteLine(txtLiquidadorResp.Text);
+            //objsw.Close();
+
+            //MessageBox.Show("Cargado Correctamente");
+            //txtNumeroProveedor.Text = "";
+            //txtEntidad.Text = "";
+            //txtApertura.Text = "";
+            //txtNExp.Text = "";
+            //txtJurisdiccion.Text = "";
+            //txtDireccion.Text = "";
+            //txtLiquidadorResp.Text = "";
 
 
         }
