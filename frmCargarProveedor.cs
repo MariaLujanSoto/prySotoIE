@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace prySotoIE
 {
     public partial class frmCargarProveedor : Form
     {
+        
         public frmCargarProveedor()
         {
             InitializeComponent();
@@ -40,12 +40,12 @@ namespace prySotoIE
             txtNExp.Text = "";
             txtJurisdiccion.Text = "";
             txtLiquidadorResp.Text = "";
-           
 
-         
+            frmCargarProveedor cargarProveedor = new frmCargarProveedor();
+        }
 
-
-
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
         }
 
         private void frmCargarProveedor_Load(object sender, EventArgs e)
@@ -73,6 +73,11 @@ namespace prySotoIE
         private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -13,16 +13,24 @@ using System.Security.Cryptography;
 
 namespace prySotoIE
 {
+
     public partial class frmMain : Form
     {
+        private frmCargarProveedor cargarProveedor;
         public frmMain()
         {
             InitializeComponent();
             PopulateTreeView();
+            cargarProveedor = new frmCargarProveedor(); // Crear una nueva instancia
+
 
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            frmCargarProveedor cargarProveedor = new frmCargarProveedor(); // Crear una nueva instancia
 
+        }
         private void PopulateTreeView()
         {
             TreeNode rootNode;
@@ -235,9 +243,8 @@ namespace prySotoIE
 
         public void grilla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            pos = grilla.CurrentRow.Index;
+            
 
-            frmCargarProveedor.txtNumeroProveedor.Text = grilla[0,pos].Value.ToString();
         }
 
 
@@ -271,6 +278,7 @@ namespace prySotoIE
             frmCargarProveedor frmCargarProveedor = new frmCargarProveedor();
             frmCargarProveedor.Show();
             this.Hide();
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -278,7 +286,21 @@ namespace prySotoIE
 
         }
 
-        
+        private void grilla_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pos = grilla.CurrentRow.Index;
+
+            cargarProveedor.txtNumeroProveedor.Text = grilla[0, pos].Value.ToString();
+            cargarProveedor.txtEntidad.Text = grilla[1, pos].Value.ToString();
+            cargarProveedor.txtApertura.Text = grilla[2, pos].Value.ToString();
+            cargarProveedor.txtNExp.Text = grilla[3, pos].Value.ToString();
+            cargarProveedor.txtJurisdiccion.Text = grilla[4, pos].Value.ToString();
+            cargarProveedor.txtDireccion.Text = grilla[5, pos].Value.ToString();
+            cargarProveedor.txtLiquidadorResp.Text = grilla[6, pos].Value.ToString();
+
+            cargarProveedor.Show();
+
+        }
     }
 }
 
