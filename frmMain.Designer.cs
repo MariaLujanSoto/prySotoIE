@@ -189,6 +189,7 @@
             this.grilla.Size = new System.Drawing.Size(604, 178);
             this.grilla.TabIndex = 33;
             this.grilla.Visible = false;
+            this.grilla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_CellClick);
             this.grilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_CellContentClick);
             // 
             // btnCargar
@@ -213,6 +214,7 @@
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Visible = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmMain
             // 

@@ -258,22 +258,22 @@
         #endregion
 
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.TextBox txtNumeroProveedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNExp;
-        private System.Windows.Forms.TextBox txtNExp;
         private System.Windows.Forms.Label lblEntidad;
         private System.Windows.Forms.Label lblApertura;
-        private System.Windows.Forms.TextBox txtApertura;
         private System.Windows.Forms.Label lblJurisd;
-        private System.Windows.Forms.TextBox txtJurisdiccion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtLiquidadorResp;
         private System.Windows.Forms.Button btnCargarProveedor;
         private System.Windows.Forms.Button btnVolverAtras;
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.TextBox txtEntidad;
+        public System.Windows.Forms.TextBox txtNumeroProveedor;
+        public System.Windows.Forms.TextBox txtNExp;
+        public System.Windows.Forms.TextBox txtApertura;
+        public System.Windows.Forms.TextBox txtJurisdiccion;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.TextBox txtLiquidadorResp;
     }
 }

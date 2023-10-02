@@ -1,4 +1,4 @@
-﻿Nº;Entidad;APERTURA;Nº EXPTE.;JUZG.;JURISD;DIRECCION;LIQUIDADOR RESPONSABLE
+Nº;Entidad;APERTURA;Nº EXPTE.;JUZG.;JURISD;DIRECCION;LIQUIDADOR RESPONSABLE
 1;Acuario Compañía de Seguros S.A.;24/2/1995;4707/1995;Comercial N° 2, Secretaría N° 3;CABA;M.T. Alvear 1840 2º piso;Dra. María Cristina Ubbriaco
 2;Aeta del Chaco Cooperativa de Seguros Ltda.;15/11/1979;7062/96;Civil y Comercial, 6ta. Nominación;Resistencia-Chaco;Lopez y Planes 48. PA;Sr. Ricardo Crosetto
 3;Alfa Compañía Argentina de Seguros S.A.;6/7/1994;3800416/93;Comercial N° 19, Secretaría N° 38;CABA;M.T. Alvear 1840 2º piso;Dra. María Alejandra Spagnolo
@@ -21,7 +21,6 @@
 20;Cardinal Compañía de Seguros S.A.;30/10/1987;32780/93;Comercial N° 12, Secretaría N° 24;CABA;M.T. Alvear 1840 2º Piso;Dr. Carlos Eduardo Sercovich
 21;Cenit Seguros S.A.;26/5/1998;90229/1997;Comercial Nº 14, Secretaría N° 28;CABA;Callao 635 2º Piso;Dra. María Cristina Ubbriaco
 22;Centuria Compañía Argentina de Seguros S.A.;17/3/1993;9915/92;Comercial Nº 26 Secretaría N° 51;CABA;Callao 635 1º Piso;Dr. Carlos Eduardo Sercovich
-23;Chacabuco Compañía Argentina de Seguros S.A.;5/5/1987;001570/97;Comercial Nº 5, Secretaría N° 10;CABA;Av. Roque Saenz Peña 615 8°;Dra. Verónica Ortíz Auger
 24;Chaco Argentino Compañía de Seguros Generales S.A.;19/12/1979;44008;Comercial Nº 1, Secretaría N° 2;CABA;Av. Roque S. Peña 1211 5º piso;Cont. Edgardo Gustavo Silva
 25;Chubut Compañía Argentina de Seguros S.A.;13/3/1995;694920;Civil Y Comercial de la 2da. Nom.;Río Cuarto-Córdoba;Palacio de Justicia. 25 de Mayo 96. centro;Dra. María Cristina Ubbriaco
 26;Comercio Español y Argentino Compañía de Seguros S.A.;12/8/1992;56596;Comercial N° 14, Secretaría N° 28;CABA;25 de Mayo 96, Centro;Dra. Claudia Marcela Pariente
@@ -47,11 +46,9 @@
 46;El Acuerdo Compañía Argentina de Seguros S.A.;16/12/1992;;Comercial N° 25, Secretaría N° 49;CABA;Callao 635 4º piso;Sr. Ricardo Crosetto
 47;El Cabildo Compañía Argentina de Seguros Grales. S.A.;23/9/1996;63537/1996;Comercial N° 23, Secretaría N° 45;CABA;M.T. Alvear 1840 2º Piso;Dr. Luis Petrate Arguello
 48;El Centinela Cooperativa de Seguros Limitada;25/2/1998;25705;Civil y Comercial N° 2, Sec. Unica;Tandil-Pcia. de Bs. As.;San Martín Nº 596;Cont. Edgardo Gustavo Silva
-49;El Comercio del Norte Compañía de Seguros S.A.;25/9/1992;1553/92;Civil y Comercial N° 7;Tucumán;Pje. Velez Sarsfield 450;Dr. Domingo Gómez Bisgarra
 50;El Mundo Compañía de Seguros Generales S.A.;10/12/1986;119219/99;Comercial N° 9, Secretaría N° 17;CABA;M.T. Alvear 1840 4º piso;Dra. Claudia Marcela Pariente
 51;El Porvenir Cooperativa de Seguros Limitada;5/8/1997;38672/1997;Comercial N° 13, Secretaría 25;CABA;M.T. Alvear 1840 4º piso;Cont. Héctor Jorge García
 52;El Refugio Compañía de Seguros Limitada S.A.;7/12/1988;8821/2014;Comercial N° 8, Secretaría N° 16;CABA;Av. Roque S. Peña 1211 7º PISO;Cont. Héctor Jorge García
-53;El Sol Argentino Compañía de Seguros Generales S.A.;4/12/1990;15798/1990;Comercial N° 23, Secretaría N° 46;CABA;M.T. Alvear 1840 2º Piso;Dr. Martín Riera
 54;El Sol de Buenos Aires Compañía de Seguros S.A.;15/12/1992;20777/1992;Comercial N° 1, Secretaría N° 2;CABA;Av. Roque S. Peña 1211 5º piso;Dr. Carlos Eduardo Sercovich
 55;Excelsior Compañía Argentina de Seguros S.A.;5/6/1989;24063/92;Comercial N° 10, Secretaría N° 20;CABA;Callao 635 E.P.;Dr. Martín Riera 
 56;FAAF S.A.;6/9/2000;1183/00;Juzg. de distrito de la 8a nominación;Rosario-Santa Fe;Balcarce 1651;Dra. Gabriela Inés Trapaglia
@@ -87,7 +84,6 @@
 86;La Defensa Compañía Argentina de Seguros Generales S.A.;28/4/1994;14952/94;Comercial N° 16, Secretaría N° 32;CABA;Callao 635 E.P.;Dra. María Cristina Ubbriaco
 87;La Fortuna S.A. Argentina de Seguros Generales S.A.;29/10/1997;064514/97;Comercial N° 6, Secretaría N° 12;CABA;Av. Roque S. Peña 1211 2º Piso;Dra. María Alejandra Spagnolo
 88;La Gremial Económica Compañía Argentina de Seguros S.A.;25/11/1993;27060;N° 2 de Concursos;Mendoza;San Martin Nº 322, 3º piso-Oeste;Cont. Edgardo Gustavo Silva
-89;La Hispano Argentina Compañía de Seguros S.A.;15/4/1997;15781/97;Comercial Nº 13, Secretaría N° 25;CABA;M.T. Alvear 1840 4º piso;Dr. Carlos Eduardo Sercovich
 90;La Ibero Platense Cía. Argentina de Seguros;20/7/2001;052162/00;Comercial N° 9, Secretaría N° 17;CABA;M.T. Alvear 1840 4º piso;Cont. Héctor Jorge García
 91;La Industrial Cooperativa de Seguros Limitada;26/2/1998;86692/97;Comercial N° 7, Secretaría N° 13;CABA;Av. Roque S. Peña 1211 2º Piso;Dr. Carlos Eduardo Sercovich
 92;La Inmobiliaria Cía. Argentina de Seguros Generales S.A.;17/2/1986;094384/98;Comercial N° 9, Secretaría N° 17;CABA;M.T. Alvear 1840 4º piso;Dra. Verónica Ortíz Auger
@@ -153,7 +149,4 @@
 152;Oversafe Seguros de Retiro S.A.;2/9/2013;20483/13;Comercial Nº 9, Secretaría 18;CABA;M.T. Alvear 1840 4º piso;Dra. Alicia Nilda Sturla
 153;Profuturo Compañía de Seguros de Retiro;2/10/2014;27326/14;Comercial 17, Secretaría 33;CABA;M.T. Alvear 1840 3º piso;Dra. Gabriela Inés Trapaglia
 154;Unidos Seguros de Retiro S.A.;16/9/2014;733/14;Juzg. 1º Dist. De la 4ª Nom.;Rafaela - Santa Fe;Balcarce 1651;Cont. Edgardo Gustavo Silva
-155;Aseguradora de Riesgo de Trabajo Interacción S.A.;29/8/2016;17720/16;Comercial 8, Secretaría 16;CABA;Av. Roque S. Peña 1211 7º PISO;Dr. Domingo Gómez Bisgarra
-156;Aseguradora federal Argentina S.A.;5/1/2017;28796/2016;Comercial 14, Secretaria 27;CABA;Callao 635 2º Piso;Dres. María Mendía y Martín Riera
-157;ART Liderar S.A.;7/10/2019;24528/2019;Comercial 31, Secretaría 61;Juzgado es Montevideo 546, piso 7º;CABA;Dras. Andrea Rojas y Claudia Pariente
 ;;;;;;;

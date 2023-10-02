@@ -23,17 +23,6 @@ namespace prySotoIE
         }
 
 
-        private void btnGrabarArchivo_Click(object sender, EventArgs e)
-        {
-            //StreamWriter objsw = new StreamWriter("Nuevoproveedor", true);
-            //objsw.WriteLine(txtNombreProveedor.Text);
-            //objsw.Close();
-
-            //MessageBox.Show("Cargado Correctamente");
-            //txtNombreProveedor.Text = "";
-            //txtNombreProveedor.Focus();
-        }
-
         private void PopulateTreeView()
         {
             TreeNode rootNode;
@@ -86,30 +75,36 @@ namespace prySotoIE
             
 
         }
+        bool grillaCargada = false;
 
-        private void CargarDatosDesdeCSV()
+        public void CargarDatosDesdeCSV()
 
         {
-            StreamReader sr = new StreamReader("../../Resources/Proveedores/Aseguradoras.csv");
-
-            leerLinea = sr.ReadLine();
-            separarDatos = leerLinea.Split(';');
-            datosCargados = false;
-
-            for (int indice = 0; indice < separarDatos.Length; indice++)
             {
-                grilla.Columns.Add(separarDatos[indice], separarDatos[indice]);
-            }
+                StreamReader sr = new StreamReader("../../Resources/Proveedores/Aseguradoras.csv");
 
-            while (sr.EndOfStream == false)
-            {
                 leerLinea = sr.ReadLine();
                 separarDatos = leerLinea.Split(';');
-                grilla.Rows.Add(separarDatos);
+                datosCargados = false;
 
+                for (int indice = 0; indice < separarDatos.Length; indice++)
+                {
+                    grilla.Columns.Add(separarDatos[indice], separarDatos[indice]);
+                }
+
+                while (sr.EndOfStream == false)
+                {
+                    leerLinea = sr.ReadLine();
+                    separarDatos = leerLinea.Split(';');
+                    grilla.Rows.Add(separarDatos);
+
+                }
+
+                sr.Close();
             }
-
-            sr.Close();
+           
+            
+            
         }
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -209,16 +204,48 @@ namespace prySotoIE
 
 
         }
+
         string Entidad;
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            if (grilla.SelectedRows.Count > 0)
+            {
+                int rowIndex = grilla.SelectedRows[0].Index;
+                string valorAEliminar = grilla.Rows[rowIndex].Cells[0].Value.ToString();
 
+                // Obtiene la ruta del archivo CSV dentro de "Resources/Proveedores"
+                string rutaArchivoCSV = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Resources", "Proveedores", "Aseguradoras.csv");
+
+                // Lee el contenido del archivo CSV en una lista
+                List<string> lineas = File.ReadAllLines(rutaArchivoCSV).ToList();
+
+                // Encuentra y elimina la línea que contiene el valor a eliminar
+                lineas.RemoveAll(linea => linea.Contains(valorAEliminar));
+
+                // Sobrescribe el archivo CSV con los datos actualizados
+                File.WriteAllLines(rutaArchivoCSV, lineas);
+
+                // Finalmente, elimina la fila de la grilla
+                grilla.Rows.RemoveAt(rowIndex);
+            }
         }
 
-        private void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public static int pos = 0;
+
+        public void grilla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            pos = grilla.CurrentRow.Index;
+
+            frmCargarProveedor.txtNumeroProveedor.Text = grilla[0,pos].Value.ToString();
+        }
+
+
+        public void grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+
+
 
         }
 
@@ -233,15 +260,9 @@ namespace prySotoIE
             }
             else
             {
-                if(datosCargados){
-                    
-                    MessageBox.Show("Los datos ya fueron cargados previamente.");
-
-                }
-                else
-                {
+               
                     MessageBox.Show("No hay datos disponibles para cargar");
-                }
+                
             }
         }
 
@@ -251,6 +272,13 @@ namespace prySotoIE
             frmCargarProveedor.Show();
             this.Hide();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
 
