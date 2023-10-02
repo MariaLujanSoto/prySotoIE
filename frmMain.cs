@@ -253,7 +253,6 @@ namespace prySotoIE
            
 
 
-
         }
 
 
@@ -290,7 +289,7 @@ namespace prySotoIE
         {
             pos = grilla.CurrentRow.Index;
 
-            cargarProveedor.txtNumeroProveedor.Text = grilla[0, pos].Value.ToString();
+            cargarProveedor.txtNumeroProveedor.Text = grilla[0,pos].Value.ToString();
             cargarProveedor.txtEntidad.Text = grilla[1, pos].Value.ToString();
             cargarProveedor.txtApertura.Text = grilla[2, pos].Value.ToString();
             cargarProveedor.txtNExp.Text = grilla[3, pos].Value.ToString();

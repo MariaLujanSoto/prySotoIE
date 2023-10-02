@@ -46,6 +46,8 @@ namespace prySotoIE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           
+
         }
 
         private void frmCargarProveedor_Load(object sender, EventArgs e)
