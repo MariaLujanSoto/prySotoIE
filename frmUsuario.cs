@@ -58,5 +58,10 @@ namespace prySotoIE
                 }
             }
         }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
