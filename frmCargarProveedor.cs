@@ -27,7 +27,8 @@ namespace prySotoIE
         }
         clsArchivo x = new clsArchivo();
         public void btnCargarProveedor_Click(object sender, EventArgs e)
-        {
+        {   
+            //si todos los campos estan llenos graba
             if( txtNumeroProveedor.Text != "" && txtEntidad.Text != "" && txtEntidad.Text !="" && txtDireccion.Text != "" && txtNExp.Text != "" && txtJurisdiccion.Text != "" && txtLiquidadorResp.Text != "")
             {
                 string[] datosProveedor = new string[] { txtNumeroProveedor.Text = frmMain.numGuia.ToString(), txtEntidad.Text, txtApertura.Text, txtNExp.Text, txtJurisdiccion.Text, txtLiquidadorResp.Text };
@@ -62,17 +63,18 @@ namespace prySotoIE
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string ID = txtNumeroProveedor.Text;
+            //la linea como se guarda en el csv
             string nuevaLinea = $"{txtNumeroProveedor.Text};{txtEntidad.Text};{txtApertura.Text};{txtNExp.Text};{txtJurisdiccion.Text};{txtDireccion.Text};{txtLiquidadorResp.Text};";
 
-            List<string> lineasArchivo = File.ReadAllLines(rutaArchivo)
-                .Select(linea =>
+            List<string> lineasArchivo = File.ReadAllLines(rutaArchivo) //lee todas las líneas del archivo especificado y carga la mat d cadenas string
+                .Select(linea => //defino que se aplique a cada linea del archivo
                 {
-                    string[] parametros = linea.Split(';');
-                    return parametros[0] != ID ? linea : nuevaLinea;
+                    string[] parametros = linea.Split(';'); //divide las lineas en una mat en formato csv
+                    return parametros[0] != ID ? linea : nuevaLinea; // si el primer campo es dist de ID no cambia, si es igual se reemplaza sobreescribiendola
                 })
-                .ToList();
+                .ToList(); //convierte las lineas en una lista de cadenas para podes reescribirse
 
-            File.WriteAllLines(rutaArchivo, lineasArchivo);
+            File.WriteAllLines(rutaArchivo, lineasArchivo); //esvribe todas las lineas, sobreescribe 
             MessageBox.Show("Cambios Guardados");
             txtNumeroProveedor.Clear();
             txtEntidad.Clear();

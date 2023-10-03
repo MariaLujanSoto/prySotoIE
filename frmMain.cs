@@ -21,7 +21,7 @@ namespace prySotoIE
         {
             InitializeComponent();
             PopulateTreeView();
-            cargarProveedor = new frmCargarProveedor(); // Crear una nueva instancia
+            cargarProveedor = new frmCargarProveedor(); 
 
 
         }
@@ -213,27 +213,26 @@ namespace prySotoIE
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             
-            //n es el número de fila seleccionado 
+            //nos devuelve el num de la fila donde esta 
             int n = grilla.CurrentCell.RowIndex;
 
             if (n != -1)
             {
-                //ID es el número de la celda 0 de la fila seleccionada 
+                //ID es la celda y 0 la celda seleccionada
                 string ID = Convert.ToString(grilla.Rows[n].Cells[0].Value);
 
                 //Es una lista que funciona igual que un vector pero tiene métodos propios
                 List<string> lineasArchivo = new List<string>();
 
-                using (StreamReader reader = new StreamReader(rutaArchivo))
+                using (StreamReader reader = new StreamReader(rutaArchivo)) //instacncia a redear para contener la rutaMadre
                 {
 
-                    // Lee el resto de las líneas
                     string linea;
-                    while ((linea = reader.ReadLine()) != null)
+                    while ((linea = reader.ReadLine()) != null) //mientras sean iguales y existan
                     {
-                        // Procesa la línea actual aquí
+                        // Procesa la línea 
                         string[] parametros = linea.Split(';');
-                        //Copia todas las lineas que no coincide con el ID para sobreescribir el archivo sin la linea que quiero borrar
+                        //Copia todas las lineas que no coincide con el ID para no cambiarlas
                         if (parametros[0] != ID)
                         {
                             lineasArchivo.Add(linea);
@@ -251,7 +250,7 @@ namespace prySotoIE
 
                 MessageBox.Show("El registro fue eliminado correctamente.");
 
-                grilla.Rows.RemoveAt(n);
+                grilla.Rows.RemoveAt(n); //elimina todos los datos de la fila en esa posocion
             }
         }
 
@@ -316,6 +315,7 @@ namespace prySotoIE
 
         private void grilla_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //nos devuelve el num de la fila donde esta 
             pos = grilla.CurrentRow.Index;
 
             cargarProveedor.txtNumeroProveedor.Text = grilla[0,pos].Value.ToString();
