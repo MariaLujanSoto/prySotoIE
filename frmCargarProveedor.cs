@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices;
 
 namespace prySotoIE
 {
@@ -24,30 +25,62 @@ namespace prySotoIE
         {
 
         }
-        Int32 numGuia = 158;
         clsArchivo x = new clsArchivo();
         public void btnCargarProveedor_Click(object sender, EventArgs e)
         {
-            string[] datosProveedor = new string[] {numGuia.ToString(),txtEntidad.Text,txtApertura.Text,txtNExp.Text,txtJurisdiccion.Text,txtLiquidadorResp.Text};
-            string datosConcatenados = string.Join(";",datosProveedor);
-            x.Grabar(datosConcatenados);
-            numGuia++;
+            if( txtNumeroProveedor.Text != "" && txtEntidad.Text != "" && txtEntidad.Text !="" && txtDireccion.Text != "" && txtNExp.Text != "" && txtJurisdiccion.Text != "" && txtLiquidadorResp.Text != "")
+            {
+                string[] datosProveedor = new string[] { txtNumeroProveedor.Text = frmMain.numGuia.ToString(), txtEntidad.Text, txtApertura.Text, txtNExp.Text, txtJurisdiccion.Text, txtLiquidadorResp.Text };
+                string datosConcatenados = string.Join(";", datosProveedor);
+                x.Grabar(datosConcatenados);
+                frmMain.numGuia++;
 
-            MessageBox.Show("cargado correctamente");
-            txtEntidad.Text = "";
-            txtApertura.Text = "";
-            txtDireccion.Text = "";
-            txtNExp.Text = "";
-            txtJurisdiccion.Text = "";
-            txtLiquidadorResp.Text = "";
-
-            frmCargarProveedor cargarProveedor = new frmCargarProveedor();
+                MessageBox.Show("cargado correctamente");
+                txtNumeroProveedor.Clear();
+                txtEntidad.Clear();
+                txtApertura.Clear();
+                txtDireccion.Clear();
+                txtNExp.Clear();
+                txtJurisdiccion.Clear();
+                txtLiquidadorResp.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos");
+            }
+            
+            
+            
+            
+            
         }
+
+
+
+        string rutaArchivo = "../../Resources/Proveedores/Aseguradoras.csv";
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-           
+            string ID = txtNumeroProveedor.Text;
+            string nuevaLinea = $"{txtNumeroProveedor.Text};{txtEntidad.Text};{txtApertura.Text};{txtNExp.Text};{txtJurisdiccion.Text};{txtDireccion.Text};{txtLiquidadorResp.Text};";
 
+            List<string> lineasArchivo = File.ReadAllLines(rutaArchivo)
+                .Select(linea =>
+                {
+                    string[] parametros = linea.Split(';');
+                    return parametros[0] != ID ? linea : nuevaLinea;
+                })
+                .ToList();
+
+            File.WriteAllLines(rutaArchivo, lineasArchivo);
+            MessageBox.Show("Cambios Guardados");
+            txtNumeroProveedor.Clear();
+            txtEntidad.Clear();
+            txtApertura.Clear();
+            txtJurisdiccion.Clear();
+            txtNExp.Clear();
+            txtDireccion.Clear();
+            txtLiquidadorResp.Clear();
         }
 
         private void frmCargarProveedor_Load(object sender, EventArgs e)
@@ -60,12 +93,7 @@ namespace prySotoIE
             Application.Exit();
         }
 
-        private void btnVolverAtras_Click(object sender, EventArgs e)
-        {
-            frmMain frmMain = new frmMain();
-            frmMain.Show();
-            this.Hide();
-        }
+        
 
         public void txtEntidad_TextChanged(object sender, EventArgs e)
         {
@@ -79,6 +107,9 @@ namespace prySotoIE
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            frmMain frmMain= new frmMain();
+            frmMain.Show();
+
             this.Hide();
         }
     }

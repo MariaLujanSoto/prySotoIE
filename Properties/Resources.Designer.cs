@@ -104,6 +104,16 @@ namespace prySotoIE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Safety_Broker_Secure__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Safety Broker Secure (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Safety_Broker_Secure1 {
             get {
                 object obj = ResourceManager.GetObject("Safety Broker Secure1", resourceCulture);

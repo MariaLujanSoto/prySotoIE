@@ -45,8 +45,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtLiquidadorResp = new System.Windows.Forms.TextBox();
             this.btnCargarProveedor = new System.Windows.Forms.Button();
-            this.btnVolverAtras = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -55,7 +54,7 @@
             this.lblNumero.AutoSize = true;
             this.lblNumero.BackColor = System.Drawing.Color.Transparent;
             this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(203, 77);
+            this.lblNumero.Location = new System.Drawing.Point(181, 77);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(68, 15);
             this.lblNumero.TabIndex = 15;
@@ -64,7 +63,7 @@
             // 
             // txtNumeroProveedor
             // 
-            this.txtNumeroProveedor.Location = new System.Drawing.Point(303, 76);
+            this.txtNumeroProveedor.Location = new System.Drawing.Point(281, 76);
             this.txtNumeroProveedor.Name = "txtNumeroProveedor";
             this.txtNumeroProveedor.Size = new System.Drawing.Size(136, 20);
             this.txtNumeroProveedor.TabIndex = 14;
@@ -73,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(168, 30);
+            this.label2.Location = new System.Drawing.Point(146, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(271, 20);
             this.label2.TabIndex = 16;
@@ -84,7 +83,7 @@
             this.lblNExp.AutoSize = true;
             this.lblNExp.BackColor = System.Drawing.Color.Transparent;
             this.lblNExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNExp.Location = new System.Drawing.Point(198, 188);
+            this.lblNExp.Location = new System.Drawing.Point(176, 188);
             this.lblNExp.Name = "lblNExp";
             this.lblNExp.Size = new System.Drawing.Size(70, 15);
             this.lblNExp.TabIndex = 18;
@@ -92,14 +91,14 @@
             // 
             // txtNExp
             // 
-            this.txtNExp.Location = new System.Drawing.Point(303, 187);
+            this.txtNExp.Location = new System.Drawing.Point(281, 187);
             this.txtNExp.Name = "txtNExp";
             this.txtNExp.Size = new System.Drawing.Size(136, 20);
             this.txtNExp.TabIndex = 17;
             // 
             // txtEntidad
             // 
-            this.txtEntidad.Location = new System.Drawing.Point(303, 113);
+            this.txtEntidad.Location = new System.Drawing.Point(281, 113);
             this.txtEntidad.Name = "txtEntidad";
             this.txtEntidad.Size = new System.Drawing.Size(136, 20);
             this.txtEntidad.TabIndex = 17;
@@ -110,7 +109,7 @@
             this.lblEntidad.AutoSize = true;
             this.lblEntidad.BackColor = System.Drawing.Color.Transparent;
             this.lblEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntidad.Location = new System.Drawing.Point(203, 114);
+            this.lblEntidad.Location = new System.Drawing.Point(181, 114);
             this.lblEntidad.Name = "lblEntidad";
             this.lblEntidad.Size = new System.Drawing.Size(66, 15);
             this.lblEntidad.TabIndex = 18;
@@ -121,7 +120,7 @@
             this.lblApertura.AutoSize = true;
             this.lblApertura.BackColor = System.Drawing.Color.Transparent;
             this.lblApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApertura.Location = new System.Drawing.Point(198, 151);
+            this.lblApertura.Location = new System.Drawing.Point(176, 151);
             this.lblApertura.Name = "lblApertura";
             this.lblApertura.Size = new System.Drawing.Size(79, 15);
             this.lblApertura.TabIndex = 20;
@@ -129,7 +128,7 @@
             // 
             // txtApertura
             // 
-            this.txtApertura.Location = new System.Drawing.Point(303, 150);
+            this.txtApertura.Location = new System.Drawing.Point(281, 150);
             this.txtApertura.Name = "txtApertura";
             this.txtApertura.Size = new System.Drawing.Size(136, 20);
             this.txtApertura.TabIndex = 19;
@@ -139,7 +138,7 @@
             this.lblJurisd.AutoSize = true;
             this.lblJurisd.BackColor = System.Drawing.Color.Transparent;
             this.lblJurisd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJurisd.Location = new System.Drawing.Point(177, 226);
+            this.lblJurisd.Location = new System.Drawing.Point(155, 226);
             this.lblJurisd.Name = "lblJurisd";
             this.lblJurisd.Size = new System.Drawing.Size(100, 15);
             this.lblJurisd.TabIndex = 24;
@@ -147,7 +146,7 @@
             // 
             // txtJurisdiccion
             // 
-            this.txtJurisdiccion.Location = new System.Drawing.Point(303, 225);
+            this.txtJurisdiccion.Location = new System.Drawing.Point(281, 225);
             this.txtJurisdiccion.Name = "txtJurisdiccion";
             this.txtJurisdiccion.Size = new System.Drawing.Size(136, 20);
             this.txtJurisdiccion.TabIndex = 23;
@@ -157,7 +156,7 @@
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.BackColor = System.Drawing.Color.Transparent;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(189, 265);
+            this.lblDireccion.Location = new System.Drawing.Point(167, 265);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(82, 15);
             this.lblDireccion.TabIndex = 22;
@@ -165,7 +164,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(303, 264);
+            this.txtDireccion.Location = new System.Drawing.Point(281, 264);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(136, 20);
             this.txtDireccion.TabIndex = 21;
@@ -175,7 +174,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(93, 308);
+            this.label8.Location = new System.Drawing.Point(71, 308);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(195, 15);
             this.label8.TabIndex = 26;
@@ -183,52 +182,48 @@
             // 
             // txtLiquidadorResp
             // 
-            this.txtLiquidadorResp.Location = new System.Drawing.Point(303, 307);
+            this.txtLiquidadorResp.Location = new System.Drawing.Point(281, 307);
             this.txtLiquidadorResp.Name = "txtLiquidadorResp";
             this.txtLiquidadorResp.Size = new System.Drawing.Size(136, 20);
             this.txtLiquidadorResp.TabIndex = 25;
             // 
             // btnCargarProveedor
             // 
+            this.btnCargarProveedor.BackColor = System.Drawing.Color.White;
+            this.btnCargarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarProveedor.Location = new System.Drawing.Point(115, 370);
+            this.btnCargarProveedor.Location = new System.Drawing.Point(102, 362);
             this.btnCargarProveedor.Name = "btnCargarProveedor";
             this.btnCargarProveedor.Size = new System.Drawing.Size(99, 33);
             this.btnCargarProveedor.TabIndex = 27;
             this.btnCargarProveedor.Text = "CARGAR";
-            this.btnCargarProveedor.UseVisualStyleBackColor = true;
+            this.btnCargarProveedor.UseVisualStyleBackColor = false;
             this.btnCargarProveedor.Click += new System.EventHandler(this.btnCargarProveedor_Click);
             // 
-            // btnVolverAtras
+            // btnAtras
             // 
-            this.btnVolverAtras.Location = new System.Drawing.Point(12, 414);
-            this.btnVolverAtras.Name = "btnVolverAtras";
-            this.btnVolverAtras.Size = new System.Drawing.Size(53, 38);
-            this.btnVolverAtras.TabIndex = 28;
-            this.btnVolverAtras.Text = "←";
-            this.btnVolverAtras.UseVisualStyleBackColor = true;
-            this.btnVolverAtras.Click += new System.EventHandler(this.btnVolverAtras_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(357, 370);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 33);
-            this.btnCancelar.TabIndex = 31;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnAtras.BackColor = System.Drawing.Color.White;
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(344, 362);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(99, 33);
+            this.btnAtras.TabIndex = 31;
+            this.btnAtras.Text = "ATRAS";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(236, 370);
+            this.btnGuardar.Location = new System.Drawing.Point(223, 362);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(99, 33);
             this.btnGuardar.TabIndex = 32;
             this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmCargarProveedor
@@ -236,11 +231,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(563, 464);
+            this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure__1_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(563, 448);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnVolverAtras);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCargarProveedor);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtLiquidadorResp);
@@ -280,8 +275,7 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCargarProveedor;
-        private System.Windows.Forms.Button btnVolverAtras;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAtras;
         public System.Windows.Forms.TextBox txtEntidad;
         public System.Windows.Forms.TextBox txtNumeroProveedor;
         public System.Windows.Forms.TextBox txtNExp;

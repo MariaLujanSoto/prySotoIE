@@ -46,7 +46,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grilla = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -171,13 +170,15 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(468, 519);
+            this.btnEliminar.Location = new System.Drawing.Point(405, 522);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(91, 33);
+            this.btnEliminar.Size = new System.Drawing.Size(97, 33);
             this.btnEliminar.TabIndex = 30;
             this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -195,27 +196,17 @@
             // 
             // btnCargar
             // 
+            this.btnCargar.BackColor = System.Drawing.Color.White;
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(218, 519);
+            this.btnCargar.Location = new System.Drawing.Point(259, 522);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(99, 33);
+            this.btnCargar.Size = new System.Drawing.Size(98, 33);
             this.btnCargar.TabIndex = 34;
             this.btnCargar.Text = "CARGAR";
-            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Visible = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(346, 519);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(91, 33);
-            this.btnEditar.TabIndex = 35;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Visible = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmMain
             // 
@@ -225,7 +216,6 @@
             this.BackgroundImage = global::prySotoIE.Properties.Resources.image1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(789, 586);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.grilla);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnEliminar);
@@ -269,6 +259,5 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView grilla;
         private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.Button btnEditar;
     }
 }

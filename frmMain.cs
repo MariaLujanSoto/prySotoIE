@@ -68,8 +68,7 @@ namespace prySotoIE
         {
 
         }
-        void treeView1_NodeMouseDoubleClick(object sender,
-    TreeNodeMouseClickEventArgs e)
+        void treeView1_NodeMouseDoubleClick(object sender,TreeNodeMouseClickEventArgs e)
         {
           
         }
@@ -83,7 +82,6 @@ namespace prySotoIE
             
 
         }
-        bool grillaCargada = false;
 
         public void CargarDatosDesdeCSV()
 
@@ -152,7 +150,6 @@ namespace prySotoIE
             splitContainer1.Visible = true;
             btnEliminar.Visible = true;
             btnCargar.Visible = true;
-            btnEditar.Visible= true;
             grilla.Visible = true;
         }
 
@@ -162,7 +159,6 @@ namespace prySotoIE
             splitContainer1.Visible = false;
             btnEliminar.Visible = false;
             btnCargar.Visible = false;
-            btnEditar.Visible = false;
             grilla.Visible = false;
 
         }
@@ -213,29 +209,49 @@ namespace prySotoIE
 
         }
 
-        string Entidad;
-
+        public string rutaArchivo = "../../Resources/Proveedores/Aseguradoras.csv";
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (grilla.SelectedRows.Count > 0)
+            
+            //n es el número de fila seleccionado 
+            int n = grilla.CurrentCell.RowIndex;
+
+            if (n != -1)
             {
-                int rowIndex = grilla.SelectedRows[0].Index;
-                string valorAEliminar = grilla.Rows[rowIndex].Cells[0].Value.ToString();
+                //ID es el número de la celda 0 de la fila seleccionada 
+                string ID = Convert.ToString(grilla.Rows[n].Cells[0].Value);
 
-                // Obtiene la ruta del archivo CSV dentro de "Resources/Proveedores"
-                string rutaArchivoCSV = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Resources", "Proveedores", "Aseguradoras.csv");
+                //Es una lista que funciona igual que un vector pero tiene métodos propios
+                List<string> lineasArchivo = new List<string>();
 
-                // Lee el contenido del archivo CSV en una lista
-                List<string> lineas = File.ReadAllLines(rutaArchivoCSV).ToList();
+                using (StreamReader reader = new StreamReader(rutaArchivo))
+                {
 
-                // Encuentra y elimina la línea que contiene el valor a eliminar
-                lineas.RemoveAll(linea => linea.Contains(valorAEliminar));
+                    // Lee el resto de las líneas
+                    string linea;
+                    while ((linea = reader.ReadLine()) != null)
+                    {
+                        // Procesa la línea actual aquí
+                        string[] parametros = linea.Split(';');
+                        //Copia todas las lineas que no coincide con el ID para sobreescribir el archivo sin la linea que quiero borrar
+                        if (parametros[0] != ID)
+                        {
+                            lineasArchivo.Add(linea);
+                        }
+                    }
+                }
 
-                // Sobrescribe el archivo CSV con los datos actualizados
-                File.WriteAllLines(rutaArchivoCSV, lineas);
+                using (StreamWriter writer = new StreamWriter(rutaArchivo))
+                {
+                    foreach (string elemento in lineasArchivo)
+                    {
+                        writer.WriteLine(elemento); // Escribe cada elemento en una línea del archivo
+                    }
+                }
 
-                // Finalmente, elimina la fila de la grilla
-                grilla.Rows.RemoveAt(rowIndex);
+                MessageBox.Show("El registro fue eliminado correctamente.");
+
+                grilla.Rows.RemoveAt(n);
             }
         }
 
@@ -266,17 +282,30 @@ namespace prySotoIE
             }
             else
             {
-               
+               if(datosCargados)
+                   {
+                    MessageBox.Show("Los Datos ya fueron Cargados");
+                }
+                else
+                {
                     MessageBox.Show("No hay datos disponibles para cargar");
+                }
+                    
                 
             }
         }
 
+        public static int numGuia = 158;
+
         private void btnCargar_Click(object sender, EventArgs e)
         {
+
             frmCargarProveedor frmCargarProveedor = new frmCargarProveedor();
             frmCargarProveedor.Show();
             this.Hide();
+
+            string[] datosProveedor = new string[] { frmCargarProveedor.txtNumeroProveedor.Text = numGuia.ToString(), frmCargarProveedor.txtEntidad.Text, frmCargarProveedor.txtApertura.Text, frmCargarProveedor.txtNExp.Text, frmCargarProveedor.txtJurisdiccion.Text, frmCargarProveedor.txtLiquidadorResp.Text };
+
 
         }
 

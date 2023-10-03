@@ -121,5 +121,8 @@
   <ItemGroup>
     <None Include="Resources\image1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Safety Broker Secure %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
