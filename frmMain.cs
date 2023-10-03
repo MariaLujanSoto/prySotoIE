@@ -212,45 +212,32 @@ namespace prySotoIE
         public string rutaArchivo = "../../Resources/Proveedores/Aseguradoras.csv";
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
-            //nos devuelve el num de la fila donde esta 
+
             int n = grilla.CurrentCell.RowIndex;
 
             if (n != -1)
             {
-                //ID es la celda y 0 la celda seleccionada
-                string ID = Convert.ToString(grilla.Rows[n].Cells[0].Value);
-
-                //Es una lista que funciona igual que un vector pero tiene métodos propios
+                string dato = Convert.ToString(grilla.Rows[n].Cells[0].Value);
                 List<string> lineasArchivo = new List<string>();
 
-                using (StreamReader reader = new StreamReader(rutaArchivo)) //instacncia a redear para contener la rutaMadre
+                using (StreamReader reader = new StreamReader(rutaArchivo))
                 {
-
                     string linea;
-                    while ((linea = reader.ReadLine()) != null) //mientras sean iguales y existan
+                    while ((linea = reader.ReadLine()) != null)
                     {
-                        // Procesa la línea 
                         string[] parametros = linea.Split(';');
-                        //Copia todas las lineas que no coincide con el ID para no cambiarlas
-                        if (parametros[0] != ID)
+                        if (parametros[0] != dato)
                         {
                             lineasArchivo.Add(linea);
                         }
                     }
                 }
 
-                using (StreamWriter writer = new StreamWriter(rutaArchivo))
-                {
-                    foreach (string elemento in lineasArchivo)
-                    {
-                        writer.WriteLine(elemento); // Escribe cada elemento en una línea del archivo
-                    }
-                }
+                File.WriteAllLines(rutaArchivo, lineasArchivo);
 
                 MessageBox.Show("El registro fue eliminado correctamente.");
 
-                grilla.Rows.RemoveAt(n); //elimina todos los datos de la fila en esa posocion
+                grilla.Rows.RemoveAt(n);
             }
         }
 
