@@ -37,6 +37,7 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnPrueba = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -125,6 +126,19 @@
             this.label4.Text = "¿ Aún no estas registrado ?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // btnPrueba
+            // 
+            this.btnPrueba.BackColor = System.Drawing.Color.White;
+            this.btnPrueba.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrueba.Location = new System.Drawing.Point(331, 169);
+            this.btnPrueba.Name = "btnPrueba";
+            this.btnPrueba.Size = new System.Drawing.Size(89, 31);
+            this.btnPrueba.TabIndex = 9;
+            this.btnPrueba.Text = "Btn";
+            this.btnPrueba.UseVisualStyleBackColor = false;
+            this.btnPrueba.Click += new System.EventHandler(this.btnPrueba_Click);
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +147,7 @@
             this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(445, 358);
+            this.Controls.Add(this.btnPrueba);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnIngresar);
@@ -163,5 +178,6 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnPrueba;
     }
 }

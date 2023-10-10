@@ -63,5 +63,11 @@ namespace prySotoIE
         {
 
         }
+
+        clsLog x = new clsLog();
+        private void btnPrueba_Click(object sender, EventArgs e)
+        {
+            x.AbrirBD();
+        }
     }
 }
