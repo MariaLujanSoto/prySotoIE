@@ -92,10 +92,11 @@ namespace prySotoIE
 
             lectorBD = comandoBD.ExecuteReader(); //abre la tabla y muestra por renglon
 
-           int incorrecto = 0;
+           
 
             if (lectorBD.HasRows) //SI TIENE FILAS
             {
+                int incorrecto = 0;
                 bool Find = false;
                 while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
                 {
@@ -111,8 +112,7 @@ namespace prySotoIE
                 }
                 if (Find == false)
                 {
-
-                    MessageBox.Show("NO Existente", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    incorrecto++;
 
                 }
             }
