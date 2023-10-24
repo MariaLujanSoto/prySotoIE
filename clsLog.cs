@@ -64,7 +64,8 @@ namespace prySotoIE
 
         //Validar datos
 
-        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsurios.accdb";
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
+        public string estadoConexion = "";
 
         public void ConectarBD()
         {
@@ -73,46 +74,63 @@ namespace prySotoIE
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = cadenaConexion;
                 conexionBD.Open();
+                estadoConexion = "Conectado";
             }
             catch (Exception ex)
             {
-                MessageBox.Show( ex.Message);
+                MessageBox.Show(ex.Message);
+                estadoConexion = "Error: " + ex.Message;
+
 
             }
 
         }
-        public void Busqueda(int contraseña)
+        int incorrecto = 0;
+
+        public void busqueda(string contraseña, string usuario)
         {
 
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
             comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
-            comandoBD.CommandText = "BDUsuarios"; //Que tabla traigo
+            comandoBD.CommandText = "Usuarios"; //Que tabla traigo
 
-            lectorBD = comandoBD.ExecuteReader(); //abre la tabla y muestra por renglon
+            lectorBD = comandoBD.ExecuteReader();
 
-           
 
-            if (lectorBD.HasRows) //SI TIENE FILAS
+            if (lectorBD.HasRows) //si tiene filas
             {
-                int incorrecto = 0;
-                bool Find = false;
+                bool find = false;
                 while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
                 {
-                    if (int.Parse(lectorBD[2].ToString()) == contraseña)
+                    if (lectorBD[2].ToString() == contraseña && lectorBD[1].ToString() == usuario)
                     {
                         frmMain frmMain = new frmMain();
                         frmMain.Show();
-
-                        Find = true;
-                        break;
+                        find = true;
+                        
                     }
 
                 }
-                if (Find == false)
+                if (find == false)
                 {
-                    incorrecto++;
+                    if(incorrecto<2){
+                        incorrecto++;
+                        MessageBox.Show("Ingreso incorrecto","Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                        //ver si se puede fraccionar por error
+
+                    }
+                    else
+                    {
+                        frmUsuario.contraseña = " "; // no anda locoooo por queeee
+                        frmUsuario.usuario = " ";
+                        MessageBox.Show("Datos Incorrectos", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        incorrecto = 0;
+                        
+
+                    }
+
 
                 }
             }
