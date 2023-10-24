@@ -40,13 +40,15 @@ namespace prySotoIE
         public static string usuario;
         public static string contraseña;
 
-        Int32 contError = 0;
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             contraseña = txtContraseña.Text;
             usuario = txtUsuario.Text;
 
-            objBaseDatos.busqueda(contraseña, usuario);
+            objBaseDatos.Busqueda(contraseña, usuario);
+
+            txtContraseña.Text=contraseña;
+            txtUsuario.Text = usuario;
 
             //if (txtUsuario.Text == "admin" && txtContraseña.Text == "admin1") {
             //    frmMain frmMain = new frmMain();
