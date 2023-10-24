@@ -187,8 +187,15 @@ namespace prySotoIE
 
             lectorBD = comandoBD.ExecuteReader();
 
+            if (lectorBD.HasRows) //si tiene filas
+            {
+                while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
+                {
+                    ///
+                }
+
+            }
+
         }
-
-
     }
 }
