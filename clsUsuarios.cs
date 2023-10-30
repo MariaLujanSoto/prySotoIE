@@ -9,7 +9,7 @@ using System.Data;
 
 namespace prySotoIE
 {
-    internal class clsLog
+    internal class clsUsuarios
     {
         OleDbConnection conexionBD;
         OleDbCommand comandoBD; //indica que quiero traer de las tablas
@@ -19,6 +19,7 @@ namespace prySotoIE
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
         public string estadoConexion = "";
 
+        public string datosTabla = "";
         public void ConectarBD()
         {
             try
@@ -37,8 +38,11 @@ namespace prySotoIE
             }
 
         }
-        int incorrecto = 0;
 
+
+        //-------- Funciones REGISTRO USUARIOS
+
+        int incorrecto = 0;
         public void Busqueda(string contraseña, string usuario)
         {
 
@@ -56,6 +60,7 @@ namespace prySotoIE
                 bool find = false;
                 bool validausuario = false;
                 bool validacontra = false;
+                
                 while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
                 {
 
@@ -72,7 +77,7 @@ namespace prySotoIE
                     {
                         frmMain frmMain = new frmMain();
                         frmMain.Show();
-                         
+                        frmUsuario.hide = true;
                         find = true;
                     }
 
@@ -94,6 +99,7 @@ namespace prySotoIE
                                 MessageBox.Show("Usuario No Registrados", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 frmUsuario.contraseña = "";
                                 frmUsuario.usuario = "";
+                               
 
 
                             }
@@ -106,21 +112,16 @@ namespace prySotoIE
 
 
                             }
-                        }
-                        
-
-
+                        }                    
                         incorrecto++;
                        
-
                     }
                     else
                     {
                         frmUsuario.contraseña = ""; 
                         frmUsuario.usuario = "";
                         MessageBox.Show("Datos Incorrectos", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        incorrecto = 0;
-                        
+                        incorrecto = 0;                      
 
                     }
 
@@ -131,33 +132,31 @@ namespace prySotoIE
 
         public void Grabar(string usuarioN, string contraseñaN)
         {
-            //string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
+            string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
 
-            //using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, conexionBD))
-            //{
-            //    insertCommand.Parameters.AddWithValue("@Usuario", usuarioN);
-            //    insertCommand.Parameters.AddWithValue("@Contraseña", contraseñaN);
+            using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, conexionBD))
+            {
+                insertCommand.Parameters.AddWithValue("@Usuario", usuarioN);
+                insertCommand.Parameters.AddWithValue("@Contraseña", contraseñaN);
 
-            //    int rowsAffected = insertCommand.ExecuteNonQuery();
+                int rowsAffected = insertCommand.ExecuteNonQuery();
 
-            //    if (rowsAffected > 0)
-            //    {
-            //        MessageBox.Show("Usuario: "+usuarioN+" insertado con éxito.");
-            //        frmUsuario.contraseña = "";
-            //        frmUsuario.usuario = "";
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No se pudo insertar el usuario: "+usuarioN+".");
-            //        frmUsuario.contraseña = "";
-            //        frmUsuario.usuario = "";
-            //    }
-            //}
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Usuario: " + usuarioN + " registrado con éxito.");
+                    frmUsuario.contraseña = "";
+                    frmUsuario.usuario = "";
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo insertar el usuario: " + usuarioN + ".");
+                    frmUsuario.contraseña = "";
+                    frmUsuario.usuario = "";
+                }
+            }
 
-            comandoBD = new OleDbCommand();
-            comandoBD.Connection = conexionBD;
-            comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
-            comandoBD.CommandText = "Usuarios"; //Que tabla traigo
+            //comandoBD = new OleDbCommand();
+            
 
 
         }

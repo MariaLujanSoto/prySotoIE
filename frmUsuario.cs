@@ -12,7 +12,7 @@ namespace prySotoIE
 {
     public partial class frmUsuario : Form
     {
-        clsLog objBaseDatos;
+        clsUsuarios objBaseDatos;
 
         public frmUsuario()
         {
@@ -21,7 +21,7 @@ namespace prySotoIE
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-            objBaseDatos = new clsLog();
+            objBaseDatos = new clsUsuarios();
             objBaseDatos.ConectarBD();
             lblEstadoConexion.Text = objBaseDatos.estadoConexion;
 
@@ -39,6 +39,7 @@ namespace prySotoIE
 
         public static string usuario;
         public static string contraseña;
+        public static bool hide = false;
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -49,29 +50,10 @@ namespace prySotoIE
 
             txtContraseña.Text=contraseña;
             txtUsuario.Text = usuario;
+        if (hide) {
+                        this.Hide();
+                    }
 
-            //if (txtUsuario.Text == "admin" && txtContraseña.Text == "admin1") {
-            //    frmMain frmMain = new frmMain();
-            //    frmMain.Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    contError++;
-
-            //    txtContraseña.Clear();
-            //    txtContraseña.Focus();
-            //    if (contError > 2 ) {
-            //        MessageBox.Show("Datos Incorrectos");
-            //        txtContraseña.Clear();
-            //        txtUsuario.Clear();
-            //        contError = 0;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("la contraseña no coincide, vuelva a intentar");
-            //    }
-            //}
         }
 
         private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,6 +69,11 @@ namespace prySotoIE
         {
             frmRegistroUsuario frmRegistroUsuario = new frmRegistroUsuario();
             frmRegistroUsuario.Show();
+        }
+
+        private void lblEstadoConexion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

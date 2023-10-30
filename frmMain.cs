@@ -316,6 +316,13 @@ namespace prySotoIE
             cargarProveedor.Show();
 
         }
+
+        private void baseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMostrarBD frmMostrarBD = new frmMostrarBD();
+            this.Hide();
+            frmMostrarBD.Show();
+        }
     }
 }
 

@@ -135,6 +135,7 @@
             this.lblEstadoConexion.Size = new System.Drawing.Size(43, 13);
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "Estado.";
+            this.lblEstadoConexion.Click += new System.EventHandler(this.lblEstadoConexion_Click);
             // 
             // frmUsuario
             // 

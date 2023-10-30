@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsArchivo.cs" />
-    <Compile Include="clsLog.cs" />
+    <Compile Include="clsLogs.cs" />
+    <Compile Include="clsUsuarios.cs" />
     <Compile Include="frmCargarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMostrarBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostrarBD.Designer.cs">
+      <DependentUpon>frmMostrarBD.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistroUsuario.cs">
       <SubType>Form</SubType>
@@ -89,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMostrarBD.resx">
+      <DependentUpon>frmMostrarBD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistroUsuario.resx">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>

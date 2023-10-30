@@ -12,7 +12,7 @@ namespace prySotoIE
 {
     public partial class frmRegistroUsuario : Form
     {
-        clsLog objBaseDatos;
+        clsUsuarios objBaseDatos;
 
         public frmRegistroUsuario()
         {
@@ -23,7 +23,7 @@ namespace prySotoIE
         private void frmRegistroUsuario_Load(object sender, EventArgs e)
         {
             
-            objBaseDatos = new clsLog();
+            objBaseDatos = new clsUsuarios();
             objBaseDatos.ConectarBD();
 
 
@@ -39,6 +39,7 @@ namespace prySotoIE
                 objBaseDatos.Grabar(contraseñaN, usuarioN);
                 txtContraseña.Text = contraseñaN;
                 txtUsuario.Text = usuarioN;
+
             }
             if(txtUsuario.Text == "" || txtContraseña.Text == "")
             {
@@ -46,7 +47,8 @@ namespace prySotoIE
                 if(txtContraseña.Text == "" && txtUsuario.Text == "")
                 {
                     MessageBox.Show("Complete los Datos para poder registrarse");
-                   
+                    usuarioN = "";
+                    contraseñaN = "";
                 }
                 else
                 {
@@ -54,11 +56,15 @@ namespace prySotoIE
                     {
                         MessageBox.Show("Complete el Usuario para poder registrarse");
                         txtUsuario.Focus();
+                        usuarioN = "";
+
                     }
                     if (txtContraseña.Text == "")
                     {
                         MessageBox.Show("Complete la Contraseña para poder registrarse");
                         txtContraseña.Focus();
+                        contraseñaN = "";
+
                     }
                 }
                 
