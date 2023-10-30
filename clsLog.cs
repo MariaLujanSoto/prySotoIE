@@ -15,54 +15,6 @@ namespace prySotoIE
         OleDbCommand comandoBD; //indica que quiero traer de las tablas
         OleDbDataReader lectorBD;
 
-        //OleDbConnection objCNN = new OleDbConnection();
-        //OleDbCommand objcmd = new OleDbCommand();
-        //OleDbCommand objcmt = new OleDbCommand();
-        //OleDbDataReader objDR;
-
-
-
-        //Abrir Acc
-        //public void AbrirBD()
-        //{
-
-        //    try
-        //    {
-        //        string strcnn = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
-        //        objCNN.ConnectionString = strcnn;
-        //        objCNN.Open();
-        //        objcmd.Connection = objCNN;
-        //        objcmd.CommandType = CommandType.TableDirect;
-        //        objcmd.CommandText = "Usuarios";
-        //        objcmt.CommandText = "Contraseña";
-        //        objDR = objcmd.ExecuteReader();
-        //        objDR = objcmt.ExecuteReader(); ////
-
-
-        //        if (objDR.HasRows)
-        //        {
-        //            string datos = "";
-        //            while (objDR.Read())
-        //            {
-        //                datos += objDR.GetInt32(0).ToString() + ", " + objDR.GetString(1) + "\r\n";
-
-        //            }
-
-        //            MessageBox.Show(datos, "Tabla de Usuarios ");
-        //        }
-
-        //        objCNN.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        MessageBox.Show(ex.Message);
-        //    }
-
-
-        //leer BD
-
-        //Validar datos
 
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
         public string estadoConexion = "";
@@ -179,22 +131,34 @@ namespace prySotoIE
 
         public void Grabar(string usuarioN, string contraseñaN)
         {
-            comandoBD = new OleDbCommand();
+            //string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
 
+            //using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, conexionBD))
+            //{
+            //    insertCommand.Parameters.AddWithValue("@Usuario", usuarioN);
+            //    insertCommand.Parameters.AddWithValue("@Contraseña", contraseñaN);
+
+            //    int rowsAffected = insertCommand.ExecuteNonQuery();
+
+            //    if (rowsAffected > 0)
+            //    {
+            //        MessageBox.Show("Usuario: "+usuarioN+" insertado con éxito.");
+            //        frmUsuario.contraseña = "";
+            //        frmUsuario.usuario = "";
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se pudo insertar el usuario: "+usuarioN+".");
+            //        frmUsuario.contraseña = "";
+            //        frmUsuario.usuario = "";
+            //    }
+            //}
+
+            comandoBD = new OleDbCommand();
             comandoBD.Connection = conexionBD;
             comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
             comandoBD.CommandText = "Usuarios"; //Que tabla traigo
 
-            lectorBD = comandoBD.ExecuteReader();
-
-            if (lectorBD.HasRows) //si tiene filas
-            {
-                while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
-                {
-                    ///
-                }
-
-            }
 
         }
     }

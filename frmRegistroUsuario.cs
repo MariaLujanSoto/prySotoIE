@@ -34,10 +34,42 @@ namespace prySotoIE
             usuarioN = txtUsuario.Text;
             contraseñaN = txtContraseña.Text;
 
-            objBaseDatos.Grabar(contraseñaN, usuarioN);
+            if (txtUsuario.Text != "" && txtContraseña.Text != "")
+            {
+                objBaseDatos.Grabar(contraseñaN, usuarioN);
+                txtContraseña.Text = contraseñaN;
+                txtUsuario.Text = usuarioN;
+            }
+            if(txtUsuario.Text == "" || txtContraseña.Text == "")
+            {
+                
+                if(txtContraseña.Text == "" && txtUsuario.Text == "")
+                {
+                    MessageBox.Show("Complete los Datos para poder registrarse");
+                   
+                }
+                else
+                {
+                    if (txtUsuario.Text == "")
+                    {
+                        MessageBox.Show("Complete el Usuario para poder registrarse");
+                        txtUsuario.Focus();
+                    }
+                    if (txtContraseña.Text == "")
+                    {
+                        MessageBox.Show("Complete la Contraseña para poder registrarse");
+                        txtContraseña.Focus();
+                    }
+                }
+                
+            }
+          
 
-            txtContraseña.Text = contraseñaN;
-            txtUsuario.Text = usuarioN;
+
+
+
+
+
 
         }
     }

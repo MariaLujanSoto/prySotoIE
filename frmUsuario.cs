@@ -82,5 +82,11 @@ namespace prySotoIE
         private void btnPrueba_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            frmRegistroUsuario frmRegistroUsuario = new frmRegistroUsuario();
+            frmRegistroUsuario.Show();
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroUsuario));
-            this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -37,18 +37,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnIngresar
+            // btnRegistrar
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.White;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(146, 231);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(163, 31);
-            this.btnIngresar.TabIndex = 12;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(146, 231);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(163, 31);
+            this.btnRegistrar.TabIndex = 12;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtContraseña
             // 
@@ -109,7 +109,7 @@
             this.BackgroundImage = global::prySotoIE.Properties.Resources.Safety_Broker_Secure__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(472, 324);
-            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUsuario);
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsuario;
