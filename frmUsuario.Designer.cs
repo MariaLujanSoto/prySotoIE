@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
+            this.tmrIngreso = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -130,15 +132,22 @@
             // lblEstadoConexion
             // 
             this.lblEstadoConexion.AutoSize = true;
-            this.lblEstadoConexion.Location = new System.Drawing.Point(25, 327);
+            this.lblEstadoConexion.Location = new System.Drawing.Point(390, 9);
             this.lblEstadoConexion.Name = "lblEstadoConexion";
             this.lblEstadoConexion.Size = new System.Drawing.Size(43, 13);
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "Estado.";
             this.lblEstadoConexion.Click += new System.EventHandler(this.lblEstadoConexion_Click);
             // 
+            // tmrIngreso
+            // 
+            this.tmrIngreso.Enabled = true;
+            this.tmrIngreso.Interval = 500;
+            this.tmrIngreso.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmUsuario
             // 
+            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
@@ -177,5 +186,6 @@
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEstadoConexion;
+        private System.Windows.Forms.Timer tmrIngreso;
     }
 }

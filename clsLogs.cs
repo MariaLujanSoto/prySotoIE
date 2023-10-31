@@ -25,6 +25,7 @@ namespace prySotoIE
 
         public clsLogs()
         {
+         
             try
             {
                 string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
@@ -35,7 +36,6 @@ namespace prySotoIE
 
                 objDS = new DataSet();
 
-                estadoConexion = "Conectado";
             }
             catch (Exception error)
             {
@@ -55,6 +55,8 @@ namespace prySotoIE
 
                 adaptadorBD = new OleDbDataAdapter(comandoBD);
 
+                objDS = new DataSet();
+
                 adaptadorBD.Fill(objDS, "Logs");
 
                 DataTable objTabla = objDS.Tables["Logs"];
@@ -62,14 +64,13 @@ namespace prySotoIE
 
                 nuevoRegistro["Categoria"] = "Inicio Sesión";
                 nuevoRegistro["FechaHora"] = DateTime.Now;
-                nuevoRegistro["Descripcion"] = "Inicio exitoso";
+                nuevoRegistro["Descripcion"] = inicio;
 
                 objTabla.Rows.Add(nuevoRegistro);
 
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
                 adaptadorBD.Update(objDS, "Logs");
 
-                estadoConexion = "Registro exitoso de log";
             }
             catch (Exception error)
             {
@@ -78,8 +79,8 @@ namespace prySotoIE
             }
 
         }
-
-        public void ValidarUsuario(string nombreUser, string passUser)
+        string inicio= "";
+        public void ValidarUsuario(string usuario, string contraseña)
         {
             try
             {
@@ -87,7 +88,7 @@ namespace prySotoIE
 
                 comandoBD.Connection = conexionBD;
                 comandoBD.CommandType = System.Data.CommandType.TableDirect;
-                comandoBD.CommandText = "Usuario";
+                comandoBD.CommandText = "Usuarios";
 
                 lectorBD = comandoBD.ExecuteReader();
 
@@ -95,9 +96,14 @@ namespace prySotoIE
                 {
                     while (lectorBD.Read())
                     {
-                        if (lectorBD[1].ToString() == nombreUser && lectorBD[2].ToString() == passUser)
+                        if (lectorBD[1].ToString() == usuario && lectorBD[2].ToString() == contraseña)
                         {
-                            estadoConexion = "Usuario EXISTE";
+                            inicio = "Inicio Exitoso";
+                        }
+                        else
+                        {
+                            inicio = "Inicio Fallido";
+
                         }
                     }
                 }

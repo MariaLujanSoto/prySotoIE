@@ -15,6 +15,8 @@ namespace prySotoIE
         OleDbCommand comandoBD; //indica que quiero traer de las tablas
         OleDbDataReader lectorBD;
 
+        OleDbDataAdapter adaptadorBD;
+        DataSet objDS;
 
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
         public string estadoConexion = "";
@@ -27,12 +29,12 @@ namespace prySotoIE
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = cadenaConexion;
                 conexionBD.Open();
-                estadoConexion = "Conectado";
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                estadoConexion = "Error: " + ex.Message;
+                
 
 
             }
@@ -132,33 +134,95 @@ namespace prySotoIE
 
         public void Grabar(string usuarioN, string contraseñaN)
         {
-            string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
+            //string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
 
-            using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, conexionBD))
+            //using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, conexionBD))
+            //{
+            //    insertCommand.Parameters.AddWithValue("@Usuario", usuarioN);
+            //    insertCommand.Parameters.AddWithValue("@Contraseña", contraseñaN);
+
+            //    int rowsAffected = insertCommand.ExecuteNonQuery();
+
+            //    if (rowsAffected > 0)
+            //    {
+            //        MessageBox.Show("Usuario: " + usuarioN + " registrado con éxito.");
+            //        frmUsuario.contraseña = "";
+            //        frmUsuario.usuario = "";
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se pudo insertar el usuario: " + usuarioN + ".");
+            //        frmUsuario.contraseña = "";
+            //        frmUsuario.usuario = "";
+            //    }
+            //}
+            try
             {
-                insertCommand.Parameters.AddWithValue("@Usuario", usuarioN);
-                insertCommand.Parameters.AddWithValue("@Contraseña", contraseñaN);
+                comandoBD = new OleDbCommand();
 
-                int rowsAffected = insertCommand.ExecuteNonQuery();
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;
+            comandoBD.CommandText = "Usuarios";
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Usuario: " + usuarioN + " registrado con éxito.");
-                    frmUsuario.contraseña = "";
-                    frmUsuario.usuario = "";
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo insertar el usuario: " + usuarioN + ".");
-                    frmUsuario.contraseña = "";
-                    frmUsuario.usuario = "";
-                }
+            adaptadorBD = new OleDbDataAdapter(comandoBD);
+
+                objDS = new DataSet();
+
+            adaptadorBD.Fill(objDS, "Usuarios");
+
+            DataTable objTabla = objDS.Tables["Usuarios"];
+            DataRow nuevoRegistro = objTabla.NewRow();
+
+            nuevoRegistro["Usuario"] = usuarioN;
+         
+            nuevoRegistro["Contraseña"] = contraseñaN;
+            nuevoRegistro["Categoria"] = "Usuario";
+
+            objTabla.Rows.Add(nuevoRegistro);
+
+            OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
+            adaptadorBD.Update(objDS, "Usuarios");
+
             }
+            catch (Exception error)
+            {
 
-            //comandoBD = new OleDbCommand();
-            
+                estadoConexion = error.Message;
+            }
+        
+    }
 
+        public void ValidarUsuario(string usuarioN, string contraseñaN)
+        {
+            try
+            {
+                comandoBD = new OleDbCommand();
 
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
+                comandoBD.CommandText = "Usuario";
+
+                lectorBD = comandoBD.ExecuteReader();
+
+                if (lectorBD.HasRows)
+                {
+                    while (lectorBD.Read())
+                    {
+                        if (lectorBD[1].ToString() == usuarioN && lectorBD[2].ToString() == contraseñaN)
+                        {
+                            estadoConexion = "Usuario EXISTE";
+                        }
+                    }
+                }
+
+            }
+            catch (Exception error)
+            {
+
+                estadoConexion = error.Message;
+            }
         }
+
+
     }
 }

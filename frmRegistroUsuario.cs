@@ -31,14 +31,33 @@ namespace prySotoIE
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
             usuarioN = txtUsuario.Text;
             contraseñaN = txtContraseña.Text;
 
+            objBaseDatos.ValidarUsuario(usuarioN, contraseñaN);
+
+
             if (txtUsuario.Text != "" && txtContraseña.Text != "")
             {
-                objBaseDatos.Grabar(contraseñaN, usuarioN);
-                txtContraseña.Text = contraseñaN;
-                txtUsuario.Text = usuarioN;
+                if (objBaseDatos.estadoConexion == "Usuario EXISTE")
+                {
+                    MessageBox.Show("Usuario Existente", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtContraseña.Text = "";
+                    txtUsuario.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Bienvenido", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    objBaseDatos.Grabar(contraseñaN, usuarioN);
+                    txtContraseña.Text = contraseñaN;
+                    txtUsuario.Text = usuarioN;
+                    frmMain frmMain = new frmMain();
+                    frmMain.Show();
+                    this.Hide();
+
+                }
+           
 
             }
             if(txtUsuario.Text == "" || txtContraseña.Text == "")
@@ -46,7 +65,7 @@ namespace prySotoIE
                 
                 if(txtContraseña.Text == "" && txtUsuario.Text == "")
                 {
-                    MessageBox.Show("Complete los Datos para poder registrarse");
+                    MessageBox.Show("Complete los Datos para poder registrarse", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     usuarioN = "";
                     contraseñaN = "";
                 }
@@ -54,14 +73,14 @@ namespace prySotoIE
                 {
                     if (txtUsuario.Text == "")
                     {
-                        MessageBox.Show("Complete el Usuario para poder registrarse");
+                        MessageBox.Show("Complete el Usuario para poder registrarse", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtUsuario.Focus();
                         usuarioN = "";
 
                     }
                     if (txtContraseña.Text == "")
                     {
-                        MessageBox.Show("Complete la Contraseña para poder registrarse");
+                        MessageBox.Show("Complete la Contraseña para poder registrarse", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtContraseña.Focus();
                         contraseñaN = "";
 

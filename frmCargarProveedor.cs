@@ -36,7 +36,7 @@ namespace prySotoIE
                 x.Grabar(datosConcatenados);
                 frmMain.numGuia++;
 
-                MessageBox.Show("cargado correctamente");
+                MessageBox.Show("cargado correctamente", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNumeroProveedor.Clear();
                 txtEntidad.Clear();
                 txtApertura.Clear();
@@ -75,7 +75,7 @@ namespace prySotoIE
                 .ToList(); //convierte las lineas en una lista de cadenas para podes reescribirse
 
             File.WriteAllLines(rutaArchivo, lineasArchivo); //esvribe todas las lineas, sobreescribe 
-            MessageBox.Show("Cambios Guardados");
+            MessageBox.Show("Cambios Guardados", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             txtNumeroProveedor.Clear();
             txtEntidad.Clear();
             txtApertura.Clear();
@@ -87,7 +87,7 @@ namespace prySotoIE
 
         private void frmCargarProveedor_Load(object sender, EventArgs e)
         {
-
+            //modificar contador de registros
         }
 
         private void frmCargarProveedor_FormClosed(object sender, FormClosedEventArgs e)
