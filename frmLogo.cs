@@ -15,6 +15,8 @@ namespace prySotoIE
         public frmLogo()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmLogo_KeyDown);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -35,5 +37,17 @@ namespace prySotoIE
             Application.Exit();
 
         }
+
+        private void frmLogo_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es ESC
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Cerrar el formulario
+                this.Close();
+            }
+        }
+
+
     }
 }

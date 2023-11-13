@@ -17,6 +17,8 @@ namespace prySotoIE
         public frmMostrarBD()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmMostrarBD_KeyDown);
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -30,6 +32,21 @@ namespace prySotoIE
         {
             objBaseDatos = new clsLogs();
             lblEstadoConexion.Text = objBaseDatos.estadoConexion;
+        }
+
+        private void frmMostrarBD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
+        }
+        private void frmMostrarBD_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es ESC
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Cerrar el formulario
+                this.Close();
+            }
         }
     }
 }

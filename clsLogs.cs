@@ -9,7 +9,7 @@ using System.Data;
 
 namespace prySotoIE
 {
-    
+
     internal class clsLogs
     {
 
@@ -25,7 +25,7 @@ namespace prySotoIE
 
         public clsLogs()
         {
-         
+
             try
             {
                 string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
@@ -79,7 +79,7 @@ namespace prySotoIE
             }
 
         }
-        string inicio= "";
+        string inicio = "";
         public void ValidarUsuario(string usuario, string contraseña)
         {
             try
@@ -111,10 +111,10 @@ namespace prySotoIE
             }
             catch (Exception error)
             {
-
                 estadoConexion = error.Message;
             }
-        }
+        } 
+   
 
 
 

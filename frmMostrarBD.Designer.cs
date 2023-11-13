@@ -42,7 +42,7 @@
             // lblEstadoConexion
             // 
             this.lblEstadoConexion.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstadoConexion.Location = new System.Drawing.Point(173, 91);
+            this.lblEstadoConexion.Location = new System.Drawing.Point(191, 77);
             this.lblEstadoConexion.Name = "lblEstadoConexion";
             this.lblEstadoConexion.Size = new System.Drawing.Size(146, 25);
             this.lblEstadoConexion.TabIndex = 0;
@@ -52,18 +52,18 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(193, 58);
+            this.label2.Location = new System.Drawing.Point(156, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 20);
+            this.label2.Size = new System.Drawing.Size(332, 20);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Base de Datos Safety Net";
+            this.label2.Text = "Base de Datos Administrable Safety Net\r\n";
             // 
             // lblEC
             // 
             this.lblEC.AutoSize = true;
             this.lblEC.BackColor = System.Drawing.Color.Transparent;
             this.lblEC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEC.Location = new System.Drawing.Point(36, 100);
+            this.lblEC.Location = new System.Drawing.Point(54, 86);
             this.lblEC.Name = "lblEC";
             this.lblEC.Size = new System.Drawing.Size(131, 16);
             this.lblEC.TabIndex = 9;
@@ -72,14 +72,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(92, 143);
+            this.dataGridView1.Location = new System.Drawing.Point(110, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(466, 196);
             this.dataGridView1.TabIndex = 10;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(340, 370);
+            this.btnBuscar.Location = new System.Drawing.Point(470, 355);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(139, 37);
             this.btnBuscar.TabIndex = 11;
@@ -88,7 +88,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(28, 371);
+            this.btnAtras.Location = new System.Drawing.Point(46, 357);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(84, 35);
             this.btnAtras.TabIndex = 12;
@@ -101,7 +101,7 @@
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(173, 379);
+            this.lblBusqueda.Location = new System.Drawing.Point(176, 365);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(161, 15);
             this.lblBusqueda.TabIndex = 13;
@@ -124,7 +124,9 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMostrarBD";
-            this.Text = "Safety Net | Base de Datos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Safety Net | Base de Datos Administrable";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMostrarBD_FormClosed);
             this.Load += new System.EventHandler(this.frmMostrarBD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

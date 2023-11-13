@@ -21,8 +21,9 @@ namespace prySotoIE
         {
             InitializeComponent();
             PopulateTreeView();
-            cargarProveedor = new frmCargarProveedor(); 
-
+            cargarProveedor = new frmCargarProveedor();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmMain_KeyDown);
 
         }
 
@@ -290,7 +291,12 @@ namespace prySotoIE
             frmCargarProveedor.Show();
             this.Hide();
 
-            string[] datosProveedor = new string[] { frmCargarProveedor.txtNumeroProveedor.Text = numGuia.ToString(), frmCargarProveedor.txtEntidad.Text, frmCargarProveedor.txtApertura.Text, frmCargarProveedor.txtNExp.Text, frmCargarProveedor.txtJurisdiccion.Text, frmCargarProveedor.txtLiquidadorResp.Text };
+            int cantFilas = grilla.Rows.Count;
+            string ultimoNumero = grilla.Rows[cantFilas - 1].Cells[0].Value.ToString();
+            int numPosicion = Convert.ToInt32(ultimoNumero) + 1;
+
+          
+            string[] datosProveedor = new string[] { frmCargarProveedor.txtNumeroProveedor.Text = numPosicion.ToString(), frmCargarProveedor.txtEntidad.Text, frmCargarProveedor.txtApertura.Text, frmCargarProveedor.txtNExp.Text, frmCargarProveedor.txtJurisdiccion.Text, frmCargarProveedor.txtLiquidadorResp.Text };
 
 
         }
@@ -323,6 +329,17 @@ namespace prySotoIE
             this.Hide();
             frmMostrarBD.Show();
         }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es ESC
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Cerrar el formulario
+                this.Close();
+            }
+        }
+
     }
 }
 

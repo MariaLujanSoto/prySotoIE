@@ -19,6 +19,8 @@ namespace prySotoIE
         public frmCargarProveedor()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmCargarProveedor_KeyDown);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -113,6 +115,17 @@ namespace prySotoIE
             frmMain.Show();
 
             this.Hide();
+          }
+
+        private void frmCargarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es ESC
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Cerrar el formulario
+                this.Close();
+            }
         }
+
     }
 }

@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Policy;
 
 namespace prySotoIE
 {
     internal class clsUsuarios
     {
         OleDbConnection conexionBD;
-        OleDbCommand comandoBD; //indica que quiero traer de las tablas
+        OleDbCommand comandoBD; 
         OleDbDataReader lectorBD;
 
         OleDbDataAdapter adaptadorBD;
         DataSet objDS;
+       
 
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BDUsuarios.accdb";
         public string estadoConexion = "";
@@ -34,8 +36,6 @@ namespace prySotoIE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
-
 
             }
 
@@ -44,7 +44,10 @@ namespace prySotoIE
 
         //-------- Funciones REGISTRO USUARIOS
 
-        int incorrecto = 0;
+        private DateTime tiempoDesbloqueo;
+        private const int tiempoBloqueo = 5000;
+        public bool banderaTimer = false;
+        public int incorrecto = 0;
         public void Busqueda(string contraseña, string usuario)
         {
 
@@ -92,16 +95,16 @@ namespace prySotoIE
                         {
                             MessageBox.Show("Contraseña incorrecta", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             frmUsuario.contraseña = "";
-
+                            incorrecto++;
                         }
                         if (validausuario == false)
                         {
                             if (validacontra == false)
                             {
-                                MessageBox.Show("Usuario No Registrados", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("Usuario No Registrado", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 frmUsuario.contraseña = "";
                                 frmUsuario.usuario = "";
-                               
+                                incorrecto++;
 
 
                             }
@@ -110,20 +113,33 @@ namespace prySotoIE
                                 MessageBox.Show("Usuario incorrecto", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 frmUsuario.usuario = "";
                                 frmUsuario.contraseña = "";
-
+                                incorrecto++;
 
 
                             }
                         }                    
-                        incorrecto++;
-                       
                     }
                     else
                     {
                         frmUsuario.contraseña = ""; 
                         frmUsuario.usuario = "";
+                        banderaTimer = true;
                         MessageBox.Show("Datos Incorrectos", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        incorrecto = 0;                      
+
+                        ////hacer condicion para que desactive el boton
+                        //tiempoDesbloqueo = DateTime.Now.AddMilliseconds(tiempoBloqueo);
+
+                        //// Iniciar un temporizador para desbloquear el botón después de cierto tiempo
+                        //btnIngresar.Enabled = false;
+                        //Timer timer = new Timer(); //defino al qrido
+                        //timer.Interval = tiempoBloqueo;
+                        //timer.Tick += (s, args) =>
+                        //{
+                        //    btnIngresar.Enabled = true;
+                        //    timer.Stop(); // corto el tempo
+                        //};
+                        //timer.Start(); incorrecto = 0;
+                       
 
                     }
 
@@ -134,59 +150,37 @@ namespace prySotoIE
 
         public void Grabar(string usuarioN, string contraseñaN)
         {
-            //string insertQuery = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)";
-
-            //using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, conexionBD))
-            //{
-            //    insertCommand.Parameters.AddWithValue("@Usuario", usuarioN);
-            //    insertCommand.Parameters.AddWithValue("@Contraseña", contraseñaN);
-
-            //    int rowsAffected = insertCommand.ExecuteNonQuery();
-
-            //    if (rowsAffected > 0)
-            //    {
-            //        MessageBox.Show("Usuario: " + usuarioN + " registrado con éxito.");
-            //        frmUsuario.contraseña = "";
-            //        frmUsuario.usuario = "";
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No se pudo insertar el usuario: " + usuarioN + ".");
-            //        frmUsuario.contraseña = "";
-            //        frmUsuario.usuario = "";
-            //    }
-            //}
+     
             try
             {
                 comandoBD = new OleDbCommand();
 
-            comandoBD.Connection = conexionBD;
-            comandoBD.CommandType = System.Data.CommandType.TableDirect;
-            comandoBD.CommandText = "Usuarios";
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
+                comandoBD.CommandText = "Usuarios";
 
-            adaptadorBD = new OleDbDataAdapter(comandoBD);
+                adaptadorBD = new OleDbDataAdapter(comandoBD);
 
-                objDS = new DataSet();
+                    objDS = new DataSet();
 
-            adaptadorBD.Fill(objDS, "Usuarios");
+                adaptadorBD.Fill(objDS, "Usuarios");
 
-            DataTable objTabla = objDS.Tables["Usuarios"];
-            DataRow nuevoRegistro = objTabla.NewRow();
+                DataTable objTabla = objDS.Tables["Usuarios"];
+                DataRow nuevoRegistro = objTabla.NewRow();
 
-            nuevoRegistro["Usuario"] = usuarioN;
+                nuevoRegistro["Usuario"] = usuarioN;
          
-            nuevoRegistro["Contraseña"] = contraseñaN;
-            nuevoRegistro["Categoria"] = "Usuario";
+                nuevoRegistro["Contraseña"] = contraseñaN;
+                nuevoRegistro["Categoria"] = "Usuario";
 
-            objTabla.Rows.Add(nuevoRegistro);
+                objTabla.Rows.Add(nuevoRegistro);
 
-            OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
-            adaptadorBD.Update(objDS, "Usuarios");
+                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
+                adaptadorBD.Update(objDS, "Usuarios");
 
             }
             catch (Exception error)
             {
-
                 estadoConexion = error.Message;
             }
         
@@ -218,7 +212,6 @@ namespace prySotoIE
             }
             catch (Exception error)
             {
-
                 estadoConexion = error.Message;
             }
         }

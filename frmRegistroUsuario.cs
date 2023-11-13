@@ -12,19 +12,21 @@ namespace prySotoIE
 {
     public partial class frmRegistroUsuario : Form
     {
-        clsUsuarios objBaseDatos;
+        clsUsuarios objUsuarios;
 
         public frmRegistroUsuario()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmRegistroUsuario_KeyDown);
         }
         public static string usuarioN;
         public static string contraseñaN;
         private void frmRegistroUsuario_Load(object sender, EventArgs e)
         {
-            
-            objBaseDatos = new clsUsuarios();
-            objBaseDatos.ConectarBD();
+
+            objUsuarios = new clsUsuarios();
+            objUsuarios.ConectarBD();
 
 
         }
@@ -35,12 +37,12 @@ namespace prySotoIE
             usuarioN = txtUsuario.Text;
             contraseñaN = txtContraseña.Text;
 
-            objBaseDatos.ValidarUsuario(usuarioN, contraseñaN);
+            objUsuarios.ValidarUsuario(usuarioN, contraseñaN);
 
 
             if (txtUsuario.Text != "" && txtContraseña.Text != "")
             {
-                if (objBaseDatos.estadoConexion == "Usuario EXISTE")
+                if (objUsuarios.estadoConexion == "Usuario EXISTE")
                 {
                     MessageBox.Show("Usuario Existente", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtContraseña.Text = "";
@@ -49,7 +51,7 @@ namespace prySotoIE
                 else
                 {
                     MessageBox.Show("Bienvenido", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    objBaseDatos.Grabar(contraseñaN, usuarioN);
+                    objUsuarios.Grabar(contraseñaN, usuarioN);
                     txtContraseña.Text = contraseñaN;
                     txtUsuario.Text = usuarioN;
                     frmMain frmMain = new frmMain();
@@ -97,8 +99,25 @@ namespace prySotoIE
 
 
         }
+
+        private void frmRegistroUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
+        }
+        private void frmRegistroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es ESC
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Cerrar el formulario
+                this.Close();
+            }
+        }
+
     }
 
+    
 
 
 }

@@ -12,18 +12,22 @@ namespace prySotoIE
 {
     public partial class frmUsuario : Form
     {
-        clsUsuarios objBaseDatos;
+        clsUsuarios objBaseDatosU;
         clsLogs objLogs;
+
+        clsUsuarios objUsuarios;
         public frmUsuario()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmUsuario_KeyDown);
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-            objBaseDatos = new clsUsuarios();
-            objBaseDatos.ConectarBD();
-            lblEstadoConexion.Text = objBaseDatos.estadoConexion;
+            objBaseDatosU = new clsUsuarios();
+            objBaseDatosU.ConectarBD();
+            lblEstadoConexion.Text = objBaseDatosU.estadoConexion;
             objLogs = new clsLogs();
 
         }
@@ -37,19 +41,17 @@ namespace prySotoIE
             Application.Exit();
 
         }
-
+        private DateTime tiempoDesbloqueo;
+        private const int tiempoBloqueo = 5000;
         public static string usuario;
         public static string contraseña;
         public static bool hide = false;
+       
         int errores = 0;
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             
-        
-
-
-
-
+           
             contraseña = txtContraseña.Text;
             usuario = txtUsuario.Text;
             if (txtUsuario.Text == "" || txtContraseña.Text == "")
@@ -58,9 +60,20 @@ namespace prySotoIE
                     MessageBox.Show("Intentalo mas tarde", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     usuario = "";
                     contraseña = "";
-                    //Timer tmrIngreso = new Timer();
-                    //tmrIngreso.Interval = 500;
+                 
                     //hacer condicion para que desactive el boton
+                    tiempoDesbloqueo = DateTime.Now.AddMilliseconds(tiempoBloqueo);
+
+                    // Iniciar un temporizador para desbloquear el botón después de cierto tiempo
+                    btnIngresar.Enabled = false;
+                    Timer timer = new Timer(); //defino al qrido
+                    timer.Interval = tiempoBloqueo;
+                    timer.Tick += (s, args) =>
+                    {
+                        btnIngresar.Enabled = true;
+                        timer.Stop(); // corto el tempo
+                    };
+                    timer.Start();
                 }
                 else
                 {
@@ -94,12 +107,30 @@ namespace prySotoIE
                 
             }
             else{
-                errores=0;
-                objLogs.ValidarUsuario(usuario, contraseña);
+                
+                objBaseDatosU.ValidarUsuario(usuario, contraseña);
+                if (objBaseDatosU.banderaTimer)
+                {
+                    //hacer condicion para que desactive el boton
+                    tiempoDesbloqueo = DateTime.Now.AddMilliseconds(tiempoBloqueo);
+
+                    // Iniciar un temporizador para desbloquear el botón después de cierto tiempo
+                    btnIngresar.Enabled = false;
+                    Timer timer = new Timer(); //defino al qrido
+                    timer.Interval = tiempoBloqueo;
+                    timer.Tick += (s, args) =>
+                    {
+                        btnIngresar.Enabled = true;
+                        timer.Stop(); // corto el tempo
+                    };
+                    timer.Start();
+                    
+                }
                 objLogs.RegistroLogInicioSesion();
-                objBaseDatos.Busqueda(contraseña, usuario);
+                objBaseDatosU.Busqueda(contraseña, usuario);
                 txtContraseña.Text = contraseña;
                 txtUsuario.Text = usuario;
+                errores = 0;
             }
 
 
@@ -134,5 +165,15 @@ namespace prySotoIE
         private void timer1_Tick(object sender, EventArgs e)
         {
         }
+        private void frmUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es ESC
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Cerrar el formulario
+                this.Close();
+            }
+        }
+
     }
 }

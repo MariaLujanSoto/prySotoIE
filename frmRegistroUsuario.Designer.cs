@@ -121,6 +121,7 @@
             this.Name = "frmRegistroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Safety NET | Registro Nuevo Usuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRegistroUsuario_FormClosed);
             this.Load += new System.EventHandler(this.frmRegistroUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
